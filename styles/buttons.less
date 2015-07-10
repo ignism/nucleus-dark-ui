@@ -1,0 +1,49 @@
+// Buttons ---------------------------------------------------------------------
+.btn {
+  .button(@button-border-color);
+
+  &:focus, &:active:focus {
+    outline: 0;
+    border: 1px solid @text-color-selected !important;
+  }
+
+  &.btn-xs {
+    font-size: 10px;
+    padding: 0 4px;
+    height: 16px;
+    line-height: 16px;
+  }
+
+  &.btn-sm {
+    font-size: 11px;
+    padding: 0 8px;
+    height: 24px;
+    line-height: 24px;
+  }
+
+  &.btn-lg {
+    font-size: 13px;
+    padding: 0 12px;
+    height: 40px;
+    line-height: 40px;
+  }
+
+  &.btn-primary {
+    .button-variant(@text-color-info);
+  }
+  &.btn-info {
+    .button-variant(@text-color-info);
+  }
+  &.btn-success {
+    .button-variant(@text-color-success);
+  }
+  &.btn-warning {
+    .button-variant(@text-color-warning);
+  }
+  &.btn-error {
+    .button-variant(@text-color-error);
+  }
+  &.status-indicator {
+    border-width: 0 !important;
+  }
+}

@@ -8,7 +8,7 @@
     "adaptive",
     "ui"
   ],
-  "repository": "https://github.com/atom/nucleus-dark-ui",
+  "repository": "https://github.com/ignism/nucleus-dark-ui",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"

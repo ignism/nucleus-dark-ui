@@ -104,3 +104,45 @@ kbd {
   font-size: 90%;
   border-radius: @component-border-radius/2;
 }
+
+.scrollbars-visible-always {
+  /deep/ ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  /deep/ ::-webkit-scrollbar-track,
+  /deep/ ::-webkit-scrollbar-corner {
+    background: @scrollbar-track-color;
+  }
+
+  /deep/ ::-webkit-scrollbar-thumb {
+    border-radius: 1px;
+    background: @scrollbar-color;
+    border: 1px solid @scrollbar-border;
+    background-clip: content-box;
+    border-right: 0px;
+  }
+
+  /deep/ ::-webkit-scrollbar-thumb:vertical:active {
+    border-radius: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+  }
+
+  /deep/ ::-webkit-scrollbar-thumb:horizontal:active {
+    border-radius: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+  }
+
+  atom-text-editor, .settings-view {
+    /deep/ ::-webkit-scrollbar-track,
+    /deep/ ::-webkit-scrollbar-corner {
+      background: @scrollbar-track-color;
+    }
+    /deep/ ::-webkit-scrollbar-thumb {
+      border-right: 1px solid @scrollbar-border;
+    }
+  }
+}

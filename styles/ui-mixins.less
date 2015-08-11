@@ -54,50 +54,6 @@
   color: @text-color-error;
 }
 
-.button(@color) {
-  .text(normal);
-  background: transparent;
-  height: @input-height;
-  height: @input-height - 2px;
-  border-radius: @component-border-radius;
-  border: 1px solid @color !important;
-  box-shadow: none !important;
-  transition: all @transition-time ease;
-
-  &:focus {
-    outline: none;
-  }
-  &:focus,
-  &[disabled],
-  &:hover {
-    color: @text-color-highlight;
-    background: @color;
-  }
-  &:active {
-    color: @text-color-selected;
-    background: @color;
-    border: 1px solid @text-color-selected !important;
-  }
-  &.selected {
-    color: @text-color-selected;
-    background: @button-background-color-selected;
-
-    &:hover {
-      border: 1px solid @background-color-highlight !important;
-      background: @color;
-    }
-  }
-}
-
-.button-variant(@color) {
-  .button(@color);
-  color: @color;
-
-  &.selected {
-    color: @color;
-  }
-}
-
 // Shadow ----------------------------------------------------------------------
 .overlay-shadow() {
   box-shadow: 0  12px 48px 0 rgba(0, 0, 0, 0.4) !important;

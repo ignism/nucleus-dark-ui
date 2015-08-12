@@ -126,6 +126,12 @@
 @markdown-preview-background-color: @syntax-background-color;
 @markdown-preview-border-color: mix(@syntax-text-color, @syntax-background-color, 20%);
 
+// Scrollbars ------------------------------------
+@scrollbar-color:                   lighten(@theme-background-color, 1%);
+@scrollbar-background-color:        darken(@theme-background-color, 6%);
+@scrollbar-color-editor:            contrast(@theme-syntax-text-color, darken(@theme-syntax-text-color, 18%), lighten(@theme-syntax-text-color, 9%) );
+@scrollbar-background-color-editor: lighten(@theme-background-color, 6%);
+
 // Site colors  ----------------------------------------------------------------
 @ui-site-color-1: @theme-green;
 @ui-site-color-2: @theme-blue;

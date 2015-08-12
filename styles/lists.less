@@ -1,19 +1,27 @@
 .list-group, .list-tree {
   li .character-match {
     .text(normal);
+    transition: color @transition-time/2  ease;
   }
+
+  li:hover .character-match {
+    .text(highlight);
+    transition: color @transition-time/2  ease;
+  }
+
   li.selected .character-match {
     .text(selected);
   }
+
   li.selected .word {
     color: @text-color-selected !important;
   }
 
-  li.list-item {
-    transition: color @transition-time ease, background @transition-time ease;
+  li, li.list-item {
+    transition: color @transition-time/2  ease;
   }
 
-  li.list-item:hover {
+  li:hover, li.list-item:hover {
     .text(highlight);
   }
 
@@ -113,8 +121,10 @@
   @font-face {
 
   }
+
   .list-group li {
     padding-left: @component-padding/2;
+    transition: color @transition-time/2  ease;
   }
 }
 

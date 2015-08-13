@@ -15,12 +15,10 @@ atom-text-editor::shadow,
   }
 
   .bracket-matcher .region {
-    box-sizing: border-box;
-    border: 1px solid @background-color-info;
+    border: 1px solid @text-color-info;
     border-radius: 2px;
-    background-color: @theme-background-color-light;
-    opacity: 1.0;
-    padding: 1px;
+    box-sizing: border-box;
+    background-color: fade(@background-color-info, 32%);
   }
 
   .invisible-character {
@@ -32,7 +30,7 @@ atom-text-editor::shadow,
   }
 
   .line.cursor-line {
-    background: @theme-background-color-light;
+    background-color: fade(@theme-background-color-lighter, 32%);
   }
 
   .selection .region {

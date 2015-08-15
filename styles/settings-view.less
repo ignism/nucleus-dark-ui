@@ -1,8 +1,20 @@
 .settings-view {
   .text(normal);
 
+  .setting-title,
+  .setting-title.themes-label {
+    .text(normal);
+  }
+
   label {
     .text(normal);
+
+    &.control-label {
+      .setting-description {
+        min-height: 3em;
+      }
+    }
+
   }
 
   .section {
@@ -20,11 +32,6 @@
   }
   .section:first-of-type {
     border-top: 0;
-  }
-
-  .packages .themes-label {
-    .text(bold);
-    color: @text-color-highlight;
   }
 
   .config-menu {

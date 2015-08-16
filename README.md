@@ -1,6 +1,6 @@
 # nucleus-dark-ui package
 
-An adaptable UI with your favorite syntax theme at it's core!
+An adaptable UI with your favorite syntax theme at its core!
 
 The screenshots below show some of my personal favorites:
 

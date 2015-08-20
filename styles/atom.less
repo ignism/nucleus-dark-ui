@@ -104,3 +104,49 @@ kbd {
   font-size: 90%;
   border-radius: @component-border-radius/2;
 }
+
+// Scrollbars ------------------------------------
+.scrollbars-visible-always {
+	/deep/ ::-webkit-scrollbar {
+		width: 10px;
+		height: 10px;
+	}
+
+	/deep/ ::-webkit-scrollbar-track {
+		background: @scrollbar-background-color;
+	}
+
+	/deep/ ::-webkit-scrollbar-thumb {
+		background: @scrollbar-color;
+		background-clip: content-box;
+	}
+
+	/deep/ ::-webkit-scrollbar-corner {
+		background: @scrollbar-background-color;
+	}
+
+	/deep/ ::-webkit-scrollbar-thumb:vertical:active {
+		border-radius: 0;
+		border-left-width: 0;
+		border-right-width: 0;
+	}
+
+	/deep/ ::-webkit-scrollbar-thumb:horizontal:active {
+		border-radius: 0;
+		border-top-width: 0;
+		border-bottom-width: 0;
+	}
+
+	atom-text-editor {
+		/deep/ ::-webkit-scrollbar-track {
+			background: @scrollbar-background-color-editor;
+		}
+		/deep/ ::-webkit-scrollbar-corner {
+			background: @scrollbar-background-color-editor;
+		}
+		/deep/ ::-webkit-scrollbar-thumb {
+			border-color: @scrollbar-background-color-editor;
+			background: @scrollbar-color-editor;
+		}
+	}
+}

@@ -25,6 +25,30 @@
     padding-right: 20px !important;
     position: relative;
     transition: color @transition-time ease, background @transition-time ease;
+    
+    .status-modified {
+      color: @text-color-modified;
+      opacity: .7;
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    .status-added {
+      color: @text-color-added;
+      opacity: .7;
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    .status-ignored {
+      color: @text-color-ignored;
+      opacity: .7;
+      &:hover {
+        opacity: 1;
+      }
+    }
 
     &:hover {
       color: @text-color-highlight;
@@ -46,6 +70,7 @@
     border-right: 1px solid @base-border-color;
     & .title {
       padding:0;
+      opacity: 1;
     }
     &:first-child {
       border-left: 0;

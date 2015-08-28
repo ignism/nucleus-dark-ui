@@ -26,6 +26,22 @@
     position: relative;
     transition: color @transition-time ease, background @transition-time ease;
 
+    .status-modified,
+    .status-added,
+    .status-ignored  {
+      transition: color @transition-time ease, background @transition-time ease;
+      &:hover {
+        color: @text-color-highlight;
+      }
+    }
+
+    .status-modified {
+      color: mix(@syntax-background-color, @text-color-modified, 48%);
+    }
+    .status-added {
+      color: mix(@syntax-background-color, @text-color-added, 48%);
+    }
+
     &:hover {
       color: @text-color-highlight;
       background: @tab-background-color-hover;
@@ -45,13 +61,23 @@
     border-left: 1px solid @base-border-color;
     border-right: 1px solid @base-border-color;
     & .title {
-      padding:0;
+      color: @text-color-selected;
+      padding: 0;
     }
     &:first-child {
       border-left: 0;
     }
     &:last-child {
       border-right: 0;
+    }
+    .status-modified {
+      color: @text-color-modified;
+    }
+    .status-added {
+      color: @text-color-added;
+    }
+    .status-ignored {
+      color: @text-color-ignored;
     }
   }
 
@@ -73,6 +99,7 @@
   .tab.modified:hover .close-icon:before {
     color: @text-color-warning;
   }
+
 
   .tab.modified:not(:hover) .close-icon {
     opacity: 1;

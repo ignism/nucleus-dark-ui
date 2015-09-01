@@ -118,3 +118,75 @@ linter-panel:empty {
     }
   }
 }
+
+// Expose ----------------------------------------------------------------------
+atom-panel.modal.overlay.from-top.expose-panel {
+  top: 0 !important;
+  border: 0 !important;
+}
+
+.expose-top {
+  height: 32px;
+
+  a {
+    display: none;
+  }
+}
+
+.expose-view .tab-list  .tab {
+  border-radius: @component-border-radius !important;
+  border: 1px solid @base-border-color !important;
+  .overlay-shadow();
+
+  &:hover {
+    .tab-header {
+      background: @tab-background-color-hover;
+      .title {
+        color: @text-color-highlight;
+      }
+    }
+    .tab-body {
+      box-shadow: none;
+    }
+  }
+
+  .tab-header {
+      transition: background @transition-time ease;
+
+    .title {
+      transition: color @transition-time ease;
+      margin-top: -4px;
+    }
+
+    .close-icon {
+      float: left;
+      transition-duration: @transition-time;
+      cursor: default;
+      position: relative;
+      left: 4px;
+      right: auto;
+      height: 16px;
+      width: 16px;
+      border-radius: 2px;
+
+      &:hover {
+        background: @tab-background-color;
+      }
+
+      &:before {
+        color: @text-color-highlight;
+        content:'✕';
+        position: absolute;
+        font-size: 12px;
+        width: 13px;
+        height: 12px;
+        top: 2px;
+        left: 2px;
+      }
+    }
+  }
+
+  .tab-body {
+    border-top: 1px solid @base-border-color !important;
+  }
+}

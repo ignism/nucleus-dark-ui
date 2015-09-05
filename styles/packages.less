@@ -151,7 +151,8 @@ atom-panel.modal.overlay.from-top.expose-panel {
   }
 
   .tab-header {
-      transition: background @transition-time ease;
+    cursor: default;
+    transition: background @transition-time ease;
 
     .title {
       transition: color @transition-time ease;
@@ -159,12 +160,9 @@ atom-panel.modal.overlay.from-top.expose-panel {
     }
 
     .close-icon {
-      float: left;
+      float: right;
       transition-duration: @transition-time;
       cursor: default;
-      position: relative;
-      left: 4px;
-      right: auto;
       height: 16px;
       width: 16px;
       border-radius: 2px;
@@ -175,7 +173,6 @@ atom-panel.modal.overlay.from-top.expose-panel {
 
       &:before {
         color: @text-color-highlight;
-        content:'✕';
         position: absolute;
         font-size: 12px;
         width: 13px;
@@ -188,5 +185,12 @@ atom-panel.modal.overlay.from-top.expose-panel {
 
   .tab-body {
     border-top: 1px solid @base-border-color !important;
+    cursor: default;
   }
+}
+
+.platform-darwin .expose-view .tab-list  .tab .tab-header .close-icon {
+  float: left !important;
+  left: 4px !important;
+  right: auto !important;
 }

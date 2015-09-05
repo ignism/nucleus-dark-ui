@@ -122,10 +122,10 @@
 
   .tab .close-icon {
     top: (@tab-height - 16) / 2;
-    left: 4px;
     height: 16px;
     width: 16px;
-    right: auto;
+    left: auto;
+    right: 4px;
     position: absolute;
     transform: scale(0);
     opacity: 0;
@@ -134,7 +134,6 @@
 
     &:before {
       color: @text-color-highlight;
-      content:'✕';
       font-size: 12px;
       position: absolute;
       top: 2px;
@@ -152,6 +151,11 @@
     transform: scale(1);
     opacity:1;
   }
+}
+
+.platform-darwin .tab .close-icon {
+  left: 4px !important;
+  right: auto !important;
 }
 
 atom-workspace > atom-workspace-axis.horizontal > atom-workspace-axis.vertical > atom-pane-container > atom-pane-axis.horizontal > atom-pane-axis.vertical > atom-pane:first-child .tab,

@@ -105,7 +105,7 @@
     opacity: 1;
     transform: scale(1);
     top: 12px;
-    left: 8px;
+    right: 8px;
     display: inline-block;
     border-color: @background-color-warning;
     border-width: 1px;
@@ -153,9 +153,17 @@
   }
 }
 
-.platform-darwin .tab .close-icon {
-  left: 4px !important;
-  right: auto !important;
+.platform-darwin {
+  .tab .close-icon {
+    left: 4px !important;
+    right: auto !important;
+  }
+
+  .tab.modified:not(:hover) .close-icon {
+    top: 12px !important;
+    left: 8px !important;
+    right: auto !important;
+  }
 }
 
 atom-workspace > atom-workspace-axis.horizontal > atom-workspace-axis.vertical > atom-pane-container > atom-pane-axis.horizontal > atom-pane-axis.vertical > atom-pane:first-child .tab,

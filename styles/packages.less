@@ -119,7 +119,7 @@ linter-panel:empty {
   }
 }
 
-// Expose ----------------------------------------------------------------------
+// expose ----------------------------------------------------------------------
 atom-panel.modal.overlay.from-top.expose-panel {
   top: 0 !important;
   border: 0 !important;
@@ -198,5 +198,16 @@ atom-panel.modal.overlay.from-top.expose-panel {
 // atom-runner -----------------------------------------------------------------
 
 .atom-runner {
-  background: @theme-background-color;
+  background: @base-background-color;
+}
+
+// imdone-atom -----------------------------------------------------------------
+.imdone-atom .imdone-board-wrapper .imdone-board {
+  .list {
+    background: @base-background-color;
+  }
+
+  .badge {
+    margin-right: 4px;
+  }
 }

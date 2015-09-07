@@ -13,19 +13,7 @@ Or install directly from the console:
 Every color used in the UI is taken directly from a, (dark) syntax theme. In order for this to work, the syntax theme needs to have a `syntax-variables.less`. A light version of this theme is still being worked on.
 
 #### Support
-
-<div>
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="WRAWZ3CZJ6X7N">
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-</form>
-</div>
-
 [Buy me a coffee to keep me going](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WRAWZ3CZJ6X7N)
-
-
 
 ## Features
 - Clutterless new windows with a flat background.

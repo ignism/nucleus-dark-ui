@@ -51,7 +51,6 @@
 // Mixins ----------------------------------------------------------------------
 .button(@color) {
   color: @text-color;
-  font-family: @font-family;
   font-size: @font-size;
   letter-spacing: 0.04em;
   font-weight: 300;
@@ -67,7 +66,6 @@
     outline: none;
   }
   &:focus,
-  &[disabled],
   &:hover {
     color: @text-color-highlight;
     background: @color;
@@ -85,6 +83,12 @@
       border: 1px solid @background-color-highlight !important;
       background: @color;
     }
+  }
+  &[disabled] {
+    opacity: 1;
+    background-color: transparent !important;
+    color: @text-color-ignored;
+    color: @base-border-color;
   }
 }
 

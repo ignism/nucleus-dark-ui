@@ -1,3 +1,11 @@
+// mini-map --------------------------------------------------------------------
+atom-text-editor::shadow atom-text-editor-minimap::shadow .minimap-visible-area,
+atom-text-editor atom-text-editor-minimap::shadow .minimap-visible-area,
+html atom-text-editor-minimap::shadow .minimap-visible-area {
+  opacity: 1.0;
+  background-color: fade(@theme-background-color-lighter, 32%);
+}
+
 // linter ----------------------------------------------------------------------
 .linter-tab {
   background: transparent;
@@ -40,7 +48,7 @@ linter-panel:empty {
   background: @app-background-color;
 }
 
-// tool-panel-background-color -------------------------------------------------
+// tool-bar --------------------------------------------------------------------
 .tool-bar {
   border: 0;
   background: @tool-panel-background-color;
@@ -48,6 +56,7 @@ linter-panel:empty {
   button {
     font-weight: 100;
   }
+
   button:before {
     font-weight: 100;
   }
@@ -56,6 +65,10 @@ linter-panel:empty {
 .tool-bar button.tool-bar-btn {
   border-color: transparent !important;
   background: transparent;
+
+  &:hover {
+    background: @button-border-color;
+  }
 }
 
 .tool-bar-spacer {
@@ -63,13 +76,23 @@ linter-panel:empty {
   border-top-color: transparent !important;
 }
 
+.tool-bar.tool-bar-vertical .tool-bar-spacer {
+  border-bottom: 1px solid @base-border-color;
+  border-top-color: transparent !important;
+}
+
+.tool-bar.tool-bar-horizontal .tool-bar-spacer {
+  border-right: 1px solid @base-border-color;
+  border-left-color: transparent !important;
+}
+
 // markdown-preview ------------------------------------------------------------
 .markdown-preview {
   color: @markdown-preview-color;
   background-color: @markdown-preview-background-color;
 
-
-  h1, h2 {
+  h1,
+  h2 {
     color: inherit;
     border-color: @markdown-preview-border-color;
   }
@@ -93,11 +116,14 @@ linter-panel:empty {
     td {
       border-color: @markdown-preview-border-color;
     }
+
     th {
       background-color: lighten(@markdown-preview-background-color, 3%);
     }
+
     tr {
       background-color: @markdown-preview-background-color;
+
       &:nth-child(2n) {
         background-color: darken(@markdown-preview-background-color, 3%);
       }
@@ -132,7 +158,7 @@ atom-panel.modal.overlay.from-top.expose-panel {
   }
 }
 
-.expose-view .tab-list  .tab {
+.expose-view .tab-list .tab {
   border-radius: @component-border-radius !important;
   border: 1px solid @base-border-color !important;
   .overlay-shadow();
@@ -140,10 +166,12 @@ atom-panel.modal.overlay.from-top.expose-panel {
   &:hover {
     .tab-header {
       background: @tab-background-color-hover;
+
       .title {
         color: @text-color-highlight;
       }
     }
+
     .tab-body {
       box-shadow: none;
     }
@@ -188,14 +216,13 @@ atom-panel.modal.overlay.from-top.expose-panel {
   }
 }
 
-.platform-darwin .expose-view .tab-list  .tab .tab-header .close-icon {
+.platform-darwin .expose-view .tab-list .tab .tab-header .close-icon {
   float: left !important;
   left: 4px !important;
   right: auto !important;
 }
 
 // atom-runner -----------------------------------------------------------------
-
 .atom-runner {
   background: @base-background-color;
 }
@@ -209,4 +236,9 @@ atom-panel.modal.overlay.from-top.expose-panel {
   .badge {
     margin-right: 4px;
   }
+}
+
+// clipboard-plus --------------------------------------------------------------
+atom-panel.clipboard-plus > .select-list > atom-text-editor[mini]:before {
+  content: "\f035" !important;
 }

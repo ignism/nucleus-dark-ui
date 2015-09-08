@@ -1,12 +1,13 @@
-.list-group, .list-tree {
+.list-group,
+.list-tree {
   li .character-match {
     .text(normal);
-    transition: color @transition-time/2  ease;
+    transition: color @transition-time/2 ease;
   }
 
   li:hover .character-match {
     .text(highlight);
-    transition: color @transition-time/2  ease;
+    transition: color @transition-time/2 ease;
   }
 
   li.selected .character-match {
@@ -17,11 +18,13 @@
     color: @text-color-selected !important;
   }
 
-  li, li.list-item {
-    transition: color @transition-time/2  ease;
+  li,
+  li.list-item {
+    transition: color @transition-time/2 ease;
   }
 
-  li:hover, li.list-item:hover {
+  li:hover,
+  li.list-item:hover {
     .text(highlight);
   }
 
@@ -32,7 +35,7 @@
 
   .generate-list-item-text-color(@class) {
     li:not(.list-nested-item).text-@{class},
-    li.list-nested-item.text-@{class} > .list-item {
+    li.list-nested-item.text-@{class}> .list-item {
       .text(@class);
     }
   }
@@ -45,16 +48,15 @@
 
   .generate-list-item-status-color(@color, @status) {
     li:not(.list-nested-item).status-@{status},
-    li.list-nested-item.status-@{status} > .list-item {
+    li.list-nested-item.status-@{status}> .list-item {
       color: @color;
     }
 
     li:not(.list-nested-item).selected.status-@{status},
-    li.list-nested-item.selected.status-@{status} > .list-item {
+    li.list-nested-item.selected.status-@{status}> .list-item {
       color: @color;
     }
   }
-
   .generate-list-item-status-color(@text-color-subtle, ignored);
   .generate-list-item-status-color(@text-color-added, added);
   .generate-list-item-status-color(@text-color-renamed, renamed);
@@ -69,11 +71,15 @@
 
 .select-list ol.list-group,
 &.select-list ol.list-group {
+  li pre {
+    margin-bottom: 0;
+  }
 
   li.two-lines {
     .secondary-line {
       .text(subtle);
     }
+
     &.selected .secondary-line {
       .text(selected);
     }
@@ -81,10 +87,21 @@
 
   li.selected {
     background-color: @background-color-selected;
-    &:before{ display: none; }
+
+    &:before {
+      display: none;
+    }
+
+    pre {
+      border-color: @text-color-highlight;
+    }
   }
 
-  &.mark-active{
+  li.selected pre {
+    border-color: @text-color-highlight;
+  }
+
+  &.mark-active {
     @active-icon-size: 14px;
 
     li:before {
@@ -92,15 +109,19 @@
       background-color: transparent;
       position: static;
       display: inline-block;
-      left: auto; right: auto;
+      left: auto;
+      right: auto;
       height: @active-icon-size;
       width: @active-icon-size;
     }
+
     > li:not(.active):before {
       margin-right: @component-icon-padding;
     }
+
     li.active {
       .octicon(check, @active-icon-size);
+
       &:before {
         margin-right: @component-icon-padding;
         color: @text-color-success;
@@ -118,13 +139,10 @@
   atom-text-editor {
     margin-bottom: @component-padding/2;
   }
-  @font-face {
-
-  }
 
   .list-group li {
     padding-left: @component-padding/2;
-    transition: color @transition-time/2  ease;
+    transition: color @transition-time/2 ease;
   }
 }
 
@@ -139,7 +157,8 @@
   }
 }
 
-li.ui-draggable-dragging, li.ui-sortable-helper {
+li.ui-draggable-dragging,
+li.ui-sortable-helper {
   line-height: @component-line-height;
   height: @component-line-height;
   list-style: none;

@@ -1,5 +1,5 @@
 atom-text-editor,
-atom-text-editor::shadow,
+atom-text-editor ::shadow,
 :host {
   .scroll-view {
     padding: 0;
@@ -48,10 +48,10 @@ atom-text-editor::shadow,
     .line-numbers {
       background: transparent !important;
     }
+
     .line-number {
       background: transparent;
       opacity: 1.0;
-
       color: @gutter-text-color;
       border-left: 2px solid transparent;
       padding-left: @component-padding !important;
@@ -62,11 +62,13 @@ atom-text-editor::shadow,
         color: @text-color-added;
         border-left-color: @text-color-added;
       }
+
       &.git-line-modified {
         font-weight: 600;
         color: @text-color-modified;
         border-left-color: @text-color-modified;
       }
+
       &.git-line-removed {
         font-weight: 600;
         color: @text-color-removed;
@@ -103,6 +105,7 @@ atom-text-editor::shadow,
     color: @text-color-info;
     border-left-color: @text-color-info;
   }
+
   .fold-marker:after {
     background: transparent;
   }

@@ -1,8 +1,10 @@
 // Buttons ---------------------------------------------------------------------
+.btn-default,
 .btn {
   .button(@button-border-color);
 
-  &:focus, &:active:focus {
+  &:focus,
+  &:active:focus {
     outline: 0;
     border: 1px solid @text-color-selected !important;
   }
@@ -31,18 +33,23 @@
   &.btn-primary {
     .button-variant(@text-color-info);
   }
+
   &.btn-info {
     .button-variant(@text-color-info);
   }
+
   &.btn-success {
     .button-variant(@text-color-success);
   }
+
   &.btn-warning {
     .button-variant(@text-color-warning);
   }
+
   &.btn-error {
     .button-variant(@text-color-error);
   }
+
   &.status-indicator {
     border-width: 0 !important;
   }
@@ -56,7 +63,6 @@
   font-weight: 300;
   background: transparent;
   height: @input-height;
-  height: @input-height - 2px;
   border-radius: @component-border-radius;
   border: 1px solid @color !important;
   box-shadow: none !important;
@@ -65,16 +71,20 @@
   &:focus {
     outline: none;
   }
+
   &:focus,
   &:hover {
     color: @text-color-highlight;
     background: @color;
   }
-  &:active {
+
+  &:active,
+  &:active:focus {
     color: @text-color-selected;
     background: @color;
     border: 1px solid @text-color-selected !important;
   }
+
   &.selected {
     color: @text-color-selected;
     background: @button-background-color-selected;
@@ -84,6 +94,7 @@
       background: @color;
     }
   }
+
   &[disabled] {
     opacity: 1;
     background-color: transparent !important;

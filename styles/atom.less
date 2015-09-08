@@ -15,7 +15,7 @@ atom-workspace {
 }
 
 .platform-darwin .close-icon:before {
-  content:'✕' !important;
+  content: '✕' !important;
 }
 
 .find-and-replace .find-meta-container {
@@ -102,9 +102,8 @@ atom-notifications {
 }
 
 kbd {
-  .text(info);
-  color: @tooltip-background-color;
-  background: @text-color;
+  .text(highlight);
+  background: @tooltip-key-color;
   font-size: 90%;
   border-radius: @component-border-radius/2;
   margin-left: @component-padding/2;
@@ -126,26 +125,28 @@ kbd {
     background: @scrollbar-color;
     border: 1px solid @scrollbar-border;
     background-clip: content-box;
-    border-right: 0px;
+    border-right: 0;
   }
 
-  /deep/ ::-webkit-scrollbar-thumb:vertical:active {
+  /deep/::-webkit-scrollbar-thumb:vertical:active {
     border-radius: 0;
     border-left-width: 0;
     border-right-width: 0;
   }
 
-  /deep/ ::-webkit-scrollbar-thumb:horizontal:active {
+  /deep/::-webkit-scrollbar-thumb:horizontal:active {
     border-radius: 0;
     border-top-width: 0;
     border-bottom-width: 0;
   }
 
-  atom-text-editor, .settings-view {
+  atom-text-editor,
+  .settings-view {
     /deep/ ::-webkit-scrollbar-track,
     /deep/ ::-webkit-scrollbar-corner {
       background: @scrollbar-track-color;
     }
+
     /deep/ ::-webkit-scrollbar-thumb {
       border-right: 1px solid @scrollbar-border;
     }
@@ -153,7 +154,6 @@ kbd {
 }
 
 // FIND PROPER PLACE
-
 pre {
   border-color: @base-border-color;
   .text(normal);

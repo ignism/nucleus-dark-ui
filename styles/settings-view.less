@@ -14,7 +14,6 @@
         min-height: 3em;
       }
     }
-
   }
 
   .section {
@@ -30,18 +29,22 @@
       font-size: 1.5em;
     }
   }
+
   .section:first-of-type {
     border-top: 0;
   }
 
   .config-menu {
     background-color: @app-background-color;
+
     .nav > li > a {
       transition: color @transition-time ease;
     }
+
     .nav > li > a:hover {
       background: transparent;
     }
+
     .nav > li.active > a:hover {
       background: @background-color-selected;
     }

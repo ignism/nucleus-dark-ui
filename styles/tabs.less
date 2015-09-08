@@ -12,7 +12,7 @@
     text-align: center;
     color: @text-color-subtle;
     background: @tab-background-color;
-    display:table-cell;
+    display: table-cell;
     width: 100%;
     height: @tab-height - 1;
     line-height: @tab-height - 1;
@@ -28,8 +28,9 @@
 
     .status-modified,
     .status-added,
-    .status-ignored  {
+    .status-ignored {
       transition: color @transition-time ease, background @transition-time ease;
+
       &:hover {
         color: @text-color-highlight;
       }
@@ -38,6 +39,7 @@
     .status-modified {
       color: mix(@syntax-background-color, @text-color-modified, 48%);
     }
+
     .status-added {
       color: mix(@syntax-background-color, @text-color-added, 48%);
     }
@@ -60,22 +62,28 @@
     border-bottom: 0;
     border-left: 1px solid @base-border-color;
     border-right: 1px solid @base-border-color;
+
     & .title {
       color: @text-color-selected;
       padding: 0;
     }
+
     &:first-child {
       border-left: 0;
     }
+
     &:last-child {
       border-right: 0;
     }
+
     .status-modified {
       color: @text-color-modified;
     }
+
     .status-added {
       color: @text-color-added;
     }
+
     .status-ignored {
       color: @text-color-ignored;
     }
@@ -85,12 +93,15 @@
   .tab.active[data-type="TextEditor"] {
     color: @syntax-text-color;
     background: @syntax-background-color;
+
     .close-icon:before {
       color: @text-color-highlight;
     }
+
     .close-icon:hover {
       background: mix(@syntax-text-color, @syntax-background-color, 20%);
     }
+
     .close-icon:hover:before {
       color: @text-color-highlight;
     }
@@ -99,7 +110,6 @@
   .tab.modified:hover .close-icon:before {
     color: @text-color-warning;
   }
-
 
   .tab.modified:not(:hover) .close-icon {
     opacity: 1;
@@ -149,7 +159,7 @@
 
   .tab:hover .close-icon {
     transform: scale(1);
-    opacity:1;
+    opacity: 1;
   }
 }
 

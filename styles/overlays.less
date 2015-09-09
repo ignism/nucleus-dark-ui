@@ -2,16 +2,16 @@ atom-panel.modal,
 .overlay {
   .overlay-shadow();
   .text(normal);
-
-  label,
-  p {
-    .text(light);
-  }
   color: @text-color;
   background-color: @overlay-background-color;
   border-radius: @component-border-radius !important;
   border: 1px solid @base-border-color !important;
   padding: @component-padding @component-padding*2;
+
+  label,
+  p {
+    .text(light);
+  }
 
   atom-text-editor[mini] {
     .text(light);
@@ -64,10 +64,6 @@ atom-panel.modal,
 
       &.two-lines {
         padding: @component-padding/2 @component-padding*2;
-      }
-
-       :before {
-
       }
 
       .status.icon {

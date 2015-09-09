@@ -1,5 +1,5 @@
 atom-text-editor,
-atom-text-editor ::shadow,
+atom-text-editor::shadow,
 :host {
   .scroll-view {
     padding: 0;
@@ -9,9 +9,10 @@ atom-text-editor ::shadow,
     background: @indent-guide-color;
   }
 
-  .indent-guide {
+  .indent-guide,
+  .indent-guide:nth-child(2n) {
     color: @indent-guide-color;
-    box-shadow: inset 1px 0 @indent-guide-color;
+    box-shadow: inset 1px 0 !important;
   }
 
   .bracket-matcher .region {

@@ -9,10 +9,9 @@ atom-text-editor::shadow,
     background: @indent-guide-color;
   }
 
-  .indent-guide,
-  .indent-guide:nth-child(2n) {
+  .indent-guide {
     color: @indent-guide-color;
-    box-shadow: inset 1px 0 !important;
+    box-shadow: inset 1px 0;
   }
 
   .bracket-matcher .region {
@@ -59,31 +58,45 @@ atom-text-editor::shadow,
       padding-right: 0;
 
       &.git-line-added {
-        font-weight: 600;
-        color: @text-color-added;
-        border-left-color: @text-color-added;
+        color: mix(@syntax-background-color, @text-color-added, 48%);
+        border-left-color: mix(@syntax-background-color, @text-color-added, 48%);
+
+        &.cursor-line,
+        &.cursor-line-no-selection {
+          border-left-color: @text-color-added;
+        }
       }
 
       &.git-line-modified {
-        font-weight: 600;
-        color: @text-color-modified;
-        border-left-color: @text-color-modified;
+        color: mix(@syntax-background-color, @text-color-modified, 48%);
+        border-left-color: mix(@syntax-background-color, @text-color-modified, 48%);
+
+        &.cursor-line,
+        &.cursor-line-no-selection {
+          border-left-color: @text-color-modified;
+        }
       }
 
       &.git-line-removed {
-        font-weight: 600;
-        color: @text-color-removed;
-        border-left-color: @text-color-removed;
+        color: mix(@syntax-background-color, @text-color-removed, 48%);
+        border-left-color: mix(@syntax-background-color, @text-color-removed, 48%);
+
+        &.cursor-line,
+        &.cursor-line-no-selection {
+          border-left-color: @text-color-removed;
+        }
       }
 
       &.cursor-line {
         background-color: @theme-background-color-lighter;
         color: @gutter-text-color-selected;
+        font-weight: 600;
       }
 
       &.cursor-line-no-selection {
         background-color: @theme-background-color-light;
         color: @text-color-highlight;
+        font-weight: 600;
       }
 
       .icon-right {
@@ -99,15 +112,24 @@ atom-text-editor::shadow,
 
   .gutter .line-number.folded,
   .gutter .line-number.folded .icon-right,
-  .gutter .line-number.folded .cursor-line,
-  .gutter .line-number:after,
-  .fold-marker:after {
-    font-weight: 600;
-    color: @text-color-info;
+  .gutter .line-number:after {
+    color: mix(@syntax-background-color, @text-color-info, 48%);
+    border-left-color: mix(@syntax-background-color, @text-color-info, 48%);
+  }
+
+  .gutter .line-number.folded.cursor-line,
+  .gutter .line-number.folded.cursor-line-no-selection {
+    color: @text-color-highlight;
     border-left-color: @text-color-info;
+
+    .icon-right {
+      color: @text-color-info;
+      border-left-color: @text-color-info;
+    }
   }
 
   .fold-marker:after {
+    color: @text-color-info;
     background: transparent;
   }
 }

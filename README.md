@@ -10,10 +10,10 @@ Or install directly from the console:
 `apm install nucleus-dark-ui`
 
 #### Requirements
-Every color used in the UI is taken directly from a, (dark) syntax theme. In order for this to work, the syntax theme needs to have a `syntax-variables.less`. A light version of this theme is still being worked on.
+Every color used in the UI is taken directly from a (dark) syntax theme. In order for this to work, the syntax theme needs to have a `syntax-variables.less`. A light version of this theme is still being worked on.
 
 #### Support
-[Buy me a coffee to keep me going](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WRAWZ3CZJ6X7N)
+[Buy me a coffee to keep me going](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YW2GB7ABTVCVA)
 
 ## Features
 - Clutterless new windows with a flat background.
@@ -25,7 +25,7 @@ Every color used in the UI is taken directly from a, (dark) syntax theme. In ord
 - Floating modal overlays (Command Palette, Fuzzy Finder etc) with a nice big type, strongly inspired by Spotlight on OS X.
 ![Atom Dark Fusion](http://i.imgur.com/HHlJWon.png)
 
-- Consistent design over different packages. File an issue if you think a package youre using needs some tweaking.
+- Consistent design over different packages. File an issue if you think a package you're using needs some tweaking.
 ![Gruvbox](http://i.imgur.com/YFQE5zY.png)
 
 #### Themes used in screenshots

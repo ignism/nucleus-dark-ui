@@ -102,9 +102,11 @@ atom-notifications {
 }
 
 kbd {
-  .text(highlight);
-  background: @tooltip-key-color;
+  .text(bold);
+  color: @tooltip-key-text-color;
+  background: @tooltip-key-background-color;
   font-size: 90%;
+  border: 1px solid @tooltip-key-text-color;
   border-radius: @component-border-radius/2;
   margin-left: @component-padding/2;
 }

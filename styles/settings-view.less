@@ -70,12 +70,6 @@
     color: @text-color-info;
   }
 
-  // atom-text-editor {
-  //   background-color: @input-background-color !important;
-  //   color: @text-color !important;
-  //   opacity: 1.0 !important;
-  // }
-
   button.uninstall-button.is-uninstalling {
     color: @text-color-highlight !important;
     border-color: @button-border-color !important;
@@ -86,6 +80,10 @@
     color: @text-color-highlight !important;
     border-color: @background-color-info !important;
     background: @background-color-info;
+  }
+
+  input[type="checkbox"]:focus {
+  box-shadow: none;
   }
 
   input[type="checkbox"]:before,

@@ -265,3 +265,32 @@ atom-panel.clipboard-plus > .select-list > atom-text-editor[mini]:before {
   font-family: Menlo, Consolas, 'DejaVu Sans Mono', monospace;
   border: 0;
 }
+
+// foldingtext
+ft-outline-editor {
+  .text(normal);
+}
+
+ft-text-input {
+  atom-text-editor[mini] {
+    .text(normal);
+    height: 18px;
+    width: 128px !important;
+    line-height: 18px;
+    font-size: 10px;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+
+    &::shadow .placeholder-text,
+    .placeholder-text {
+        .text(subtle);
+        height: 18px !important;
+        line-height: 14px !important;
+        font-size: 10px !important;
+      }
+  }
+
+  .icon-remove-close {
+    right: 4px !important;
+  }
+}

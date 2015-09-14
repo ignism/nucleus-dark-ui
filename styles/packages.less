@@ -294,3 +294,47 @@ ft-text-input {
     right: 4px !important;
   }
 }
+
+// remote-sync -----------------------------------------------------------------
+atom-panel.modal > .remote-sync {
+  &:before {
+    .text(light);
+    font-size: 2em;
+    margin-left: -@component-padding*2;
+    margin-right: -@component-padding*2;
+    margin-bottom: @component-padding*2;
+    padding-left: @component-padding*2;
+    padding-right: @component-padding*2;
+    padding-bottom: @component-padding;
+    display: block;
+    border-bottom: 1px solid @base-border-color;
+    content: "Remote Sync";
+  }
+
+  label {
+    margin-top: @component-padding;
+    margin-bottom: 0;
+  }
+
+  atom-text-editor[mini] {
+    height: @font-size + @component-padding;
+    line-height: @font-size + @component-padding;
+    font-size: @font-size;
+    font-weight: 300 !important;
+    border-bottom: 0;
+    margin-bottom: @component-padding/2;
+
+    &:before {
+      content: "";
+      padding: 0;
+    }
+
+    .placeholder-text,
+    &::shadow .placeholder-text {
+      height: @font-size + @component-padding;
+      line-height: @font-size + @component-padding;
+      font-size: @font-size;
+      font-weight: 300 !important;
+    }
+  }
+}

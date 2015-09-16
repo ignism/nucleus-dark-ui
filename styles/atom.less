@@ -18,6 +18,10 @@ atom-workspace {
   content: '✕' !important;
 }
 
+.platform-darwin .icon-x:before {
+  content: '✕' !important;
+}
+
 .find-and-replace .find-meta-container {
   top: 4px;
 
@@ -73,20 +77,22 @@ atom-text-editor[mini].is-focused::shadow {
   }
 }
 
-.icon-x::before {
-  content: '✕' !important;
-}
-
-atom-notification .close:before {
-  color: fade(@theme-background-color, 50%);
-}
-
-atom-notification .close {
-  transition: all @transition-time ease;
-}
-
 atom-notifications {
   .text(normal);
+
+  .close {
+    transition: all @transition-time ease;
+
+    &:before {
+      color: fade(@theme-background-color, 50%);
+    }
+  }
+
+  .btn.close-all {
+    border-color: rgba(0, 0, 0, 0.6) !important;
+    height: 24px;
+    line-height: 20px;
+  }
 }
 
 .background-message .message,

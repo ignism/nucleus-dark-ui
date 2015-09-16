@@ -87,11 +87,20 @@ atom-notifications {
       color: fade(@theme-background-color, 50%);
     }
   }
+  .btn {
+    height: 24px !important;
+    line-height: 20px !important;
 
-  .btn.close-all {
-    border-color: rgba(0, 0, 0, 0.6) !important;
-    height: 24px;
-    line-height: 20px;
+    &.close-all {
+      color: fade(@theme-background-color, 40%) !important;
+      border-color: fade(@theme-background-color, 40%) !important;
+
+      &:hover {
+        color: @text-color-highlight !important;
+        background-color: fade(@theme-background-color, 40%) !important;
+        border-color: fade(@theme-background-color, 0%) !important;
+      }
+    }
   }
 }
 

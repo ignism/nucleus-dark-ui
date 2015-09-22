@@ -7,14 +7,22 @@ atom-panel.modal,
   border-radius: @component-border-radius !important;
   border: 1px solid @base-border-color !important;
   padding: @component-padding @component-padding*2;
+  width: 680px;
+  margin-left: -340px;
 
   label,
   p {
     .text(light);
   }
 
-  atom-text-editor[mini] {
-    .text(light);
+  atom-text-editor[mini],
+  atom-text-editor[mini]::shadow {
+    .text(normal);
+    font-size: 24px;
+    font-weight: 300 !important;
+    line-height: 32px;
+    height: 32px + @component-padding;
+    max-height: none;
     color: @text-color-highlight;
     background-color: transparent;
     margin: 0 -@component-padding*2;
@@ -22,11 +30,7 @@ atom-panel.modal,
     border: 0;
     border-radius: 0;
     border-bottom: 1px solid @base-border-color;
-    max-height: 32px + @component-padding;
-    height: 32px + @component-padding;
-    line-height: 32px;
-    font-size: 24px;
-    font-weight: 300 !important;
+
 
     &.is-focused:hover,
     &:hover {

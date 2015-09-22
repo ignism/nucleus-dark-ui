@@ -3,14 +3,14 @@ status-bar {
   background: @base-background-color;
   height: @input-height;
   line-height: @component-line-height;
-  font-size: 10px;
+  font-size: 11px;
 
   & > .flexbox-repaint-hack {
     padding-top: 3px;
   }
 
   span {
-    font-size: 10px;
+    font-size: 11px;
   }
 }
 
@@ -30,7 +30,7 @@ atom-workspace {
   top: 4px;
 
   span {
-    font-size: 10px;
+    font-size: 11px;
     text-transform: uppercase;
   }
 }
@@ -38,7 +38,6 @@ atom-workspace {
 atom-text-editor[mini],
 atom-text-editor[mini]::shadow {
   transition: all @transition-time ease;
-  letter-spacing: 0 !important;
   color: @text-color-highlight;
   background-color: transparent;
   border: 1px solid @input-background-color;
@@ -174,7 +173,6 @@ kbd {
   }
 }
 
-// FIND PROPER PLACE
 pre {
   border-color: @base-border-color;
   .text(normal);

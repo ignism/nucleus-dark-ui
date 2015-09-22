@@ -10,36 +10,34 @@
 }
 
 .text(bold) {
+  color: @text-color;
   font-family: @font-family;
+  font-size: @font-size;
   letter-spacing: 0.04em;
   font-weight: 600;
 }
 
 .text(light) {
+  color: @text-color;
   font-family: @font-family;
+  font-size: @font-size;
   letter-spacing: 0.04em;
   font-weight: 100;
 }
 
 .text(subtle) {
-  font-family: @font-family;
-  letter-spacing: 0.04em;
+  .text(light);
   color: @text-color-subtle;
-  font-weight: 300;
 }
 
 .text(highlight) {
-  font-family: @font-family;
-  letter-spacing: 0.04em;
-  color: @text-color-highlight !important;
-  font-weight: 300;
+  .text(normal);
+  color: @text-color-highlight;
 }
 
 .text(selected) {
-  font-family: @font-family;
-  letter-spacing: 0.04em;
-  color: @text-color-selected !important;
-  font-weight: 300;
+  .text(normal);
+  color: @text-color-selected;
 }
 
 .text(info) {

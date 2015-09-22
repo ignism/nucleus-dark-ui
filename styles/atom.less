@@ -111,16 +111,20 @@ atom-notifications {
 .background-message li {
   .text(subtle);
   font-size: 24px;
-  font-weight: 300;
 
   .keystroke {
-    border-width: 1px;
-    font-weight: 300;
+    .text(normal);
+    color: @tooltip-key-text-color;
+    background: @tooltip-key-background-color;
+    font-size: 90%;
+    border: 1px solid @tooltip-key-text-color;
+    border-radius: @component-border-radius/2;
+    margin-left: @component-padding/2;
   }
 }
 
 kbd {
-  .text(bold);
+  .text(normal);
   color: @tooltip-key-text-color;
   background: @tooltip-key-background-color;
   font-size: 90%;

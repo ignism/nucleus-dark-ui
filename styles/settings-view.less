@@ -1,4 +1,8 @@
 .settings-view {
+  .breadcrumb {
+    .text(light);
+  }
+
   .text(normal);
 
   .setting-title,
@@ -10,7 +14,7 @@
     .text(normal);
 
     &.control-label {
-      .setting-description {
+      .theme-description {
         min-height: 3em;
       }
     }
@@ -20,13 +24,14 @@
     background-color: @app-background-color;
 
     .section-heading {
-      .text(light);
-      font-size: 2em;
+      .text(highlight);
+      font-size: 24px;
+      font-weight: 200;
     }
 
     .sub-section-heading {
       .text(light);
-      font-size: 1.5em;
+      font-size: 16px;
     }
   }
 
@@ -55,7 +60,19 @@
   }
 
   .package-card {
-    background-color: @tool-panel-background-color !important;
+    .text(normal);
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    padding: @component-padding 0 @component-padding 0;
+  }
+  .package-card:hover,
+  .package-detail .package-card:hover {
+    background: transparent;
+  }
+
+  .package-container .row:not(:first-child) {
+    border-top: 1px solid @indent-guide-color;
   }
 
   .package-update-view .thumbnail {
@@ -93,9 +110,9 @@
 
   select.form-control {
     .button(@button-border-color);
-    font-size: 13px;
-    height: 40px;
-    line-height: 40px;
+    .text(normal);
+    height: @input-height;
+    line-height: @input-height;
     text-transform: none;
 
     &:focus,

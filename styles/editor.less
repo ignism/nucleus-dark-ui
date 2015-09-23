@@ -63,6 +63,7 @@ atom-text-editor::shadow,
 
         &.cursor-line,
         &.cursor-line-no-selection {
+          color: @text-color-added;
           border-left-color: @text-color-added;
         }
       }
@@ -73,6 +74,7 @@ atom-text-editor::shadow,
 
         &.cursor-line,
         &.cursor-line-no-selection {
+          color: @text-color-modified;
           border-left-color: @text-color-modified;
         }
       }
@@ -83,6 +85,7 @@ atom-text-editor::shadow,
 
         &.cursor-line,
         &.cursor-line-no-selection {
+          color: @text-color-removed;
           border-left-color: @text-color-removed;
         }
       }
@@ -119,7 +122,7 @@ atom-text-editor::shadow,
 
   .gutter .line-number.folded.cursor-line,
   .gutter .line-number.folded.cursor-line-no-selection {
-    color: @text-color-highlight;
+    color: @text-color-info;
     border-left-color: @text-color-info;
 
     .icon-right {

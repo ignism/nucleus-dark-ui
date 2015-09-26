@@ -23,23 +23,26 @@
 }
 
 .text(heading) {
-  color: @text-color-highlight;
+  color: @text-color;
   font-family: @font-family-light;
   font-weight: 200;
 }
 
 .text(subtle) {
   .text(light);
+  font-size: inherit;
   color: @text-color-subtle;
 }
 
 .text(highlight) {
   .text(normal);
+  font-size: inherit;
   color: @text-color-highlight;
 }
 
 .text(selected) {
   .text(normal);
+  font-size: inherit;
   color: @text-color-selected;
 }
 

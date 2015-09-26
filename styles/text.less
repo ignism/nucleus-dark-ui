@@ -14,8 +14,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  color: @text-color-highlight;
-  font-weight: 200;
+  .text(heading);
 
   small {
     font-weight: 200;
@@ -77,4 +76,18 @@ h6,
   color: @theme-background-color !important;
   border-radius: @component-border-radius;
   background-color: @color;
+}
+
+pre {
+  .text(normal);
+  border-color: @base-border-color;
+  background: @base-background-color;
+}
+
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: @text-color-info;
+  background-color: @base-border-color;
+  border-radius: 4px;
 }

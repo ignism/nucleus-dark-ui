@@ -59,6 +59,16 @@
   }
 }
 
+.btn-group {
+  & > .btn:first-child {
+    border-left: 1px solid @button-border-color;
+  }
+
+  & > .btn:last-child {
+    border-right: 1px solid @button-border-color;
+  }
+}
+
 // Mixins ----------------------------------------------------------------------
 .button(@color) {
   color: @text-color;
@@ -68,7 +78,9 @@
   height: @input-height;
   line-height: @input-height;
   border-radius: @component-border-radius;
-  border: 1px solid @color !important;
+  border-color: @color;
+  border-width: 1px !important;
+  border-style: solid !important;
   box-shadow: none !important;
   transition: all @transition-time ease;
   padding: 0 10px;
@@ -115,4 +127,8 @@
   &.selected {
     color: @color;
   }
+}
+
+button[click="cancel"] {
+  .button-variant(@text-color-error) !important;
 }

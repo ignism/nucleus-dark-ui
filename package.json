@@ -1,7 +1,7 @@
 {
   "name": "nucleus-dark-ui",
   "theme": "ui",
-  "version": "0.5.7",
+  "version": "0.5.8",
   "description": "An adaptable UI with your favorite syntax theme at its core!",
   "keywords": [
     "dark",

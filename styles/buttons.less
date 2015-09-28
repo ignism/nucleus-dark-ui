@@ -103,7 +103,7 @@
 }
 
 .button-variant(@color) {
-  .button(@color);
+  .button(mix(@color, @base-background-color, 32%));
   color: @color;
 
   &.selected {

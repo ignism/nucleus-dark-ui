@@ -381,3 +381,15 @@ atom-panel.modal > .remote-sync {
     }
   }
 }
+
+// atom-jshint -----------------------------------------------------------------
+atom-text-editor::shadow .gutter .line-number.cursor-line.atom-jshint-error,
+:host .gutter .line-number.cursor-line.atom-jshint-error,
+atom-text-editor::shadow .gutter .line-number.atom-jshint-error,
+:host .gutter .line-number.atom-jshint-error {
+  color: @text-color-error !important;
+}
+
+#jshint-status-pane {
+  border-top: 0;
+}

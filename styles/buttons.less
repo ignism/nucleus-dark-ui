@@ -93,6 +93,7 @@
   &:hover {
     color: @text-color-highlight;
     background: @color;
+    border-color: @color;
   }
 
   &:active,
@@ -122,8 +123,12 @@
 
 .button-variant(@color) {
   .button(mix(@color, @base-background-color, 32%));
+  border-color: mix(@color, @base-background-color, 32%) !important;
   color: @color;
 
+  &:hover {
+    border-color: mix(@color, @base-background-color, 32%) !important;
+  }
   &.selected {
     color: @color;
   }

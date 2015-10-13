@@ -17,16 +17,16 @@ Every color used in the UI is taken directly from a (dark) syntax theme. In orde
 
 ## Features
 - Clutterless new windows with a flat background.
-![Batman](http://i.imgur.com/UwUUFjn.png)
+![Batman](http://i.imgur.com/U6sn2Ji.png)
 
 - A minimal approach by using only three colors in the background of the theme. All colors used are mixed variations on colors from the syntax theme.
-![Adventurous](http://i.imgur.com/W7hTSoL.png)
+![Adventurous](http://i.imgur.com/lu29fwb.png)
 
 - Floating modal overlays (Command Palette, Fuzzy Finder etc) with a nice big type, strongly inspired by Spotlight on OS X.
-![Atom Dark Fusion](http://i.imgur.com/HHlJWon.png)
+![Atom Dark Fusion](http://i.imgur.com/tCjZCSV.png)
 
 - Consistent design over different packages. File an issue if you think a package you're using needs some tweaking.
-![Gruvbox](http://i.imgur.com/YFQE5zY.png)
+![Gruvbox](http://i.imgur.com/M26tZ35.png)
 
 #### Themes used in screenshots
 The syntax themes in the screenshots are some of my personal favorites:

@@ -18,7 +18,7 @@ atom-text-editor::shadow atom-text-editor-minimap::shadow .minimap-visible-area,
 atom-text-editor atom-text-editor-minimap::shadow .minimap-visible-area,
 html atom-text-editor-minimap::shadow .minimap-visible-area {
   opacity: 1.0;
-  background-color: fade(@theme-background-color-lighter, 32%);
+  background-color: fade(@theme-background-color-light, 32%);
 }
 
 // linter ----------------------------------------------------------------------
@@ -86,7 +86,8 @@ linter-panel:empty {
   background: transparent;
 
   &:hover {
-    background: @button-border-color;
+    color: @text-color-highlight;
+    background: transparent;
   }
 }
 

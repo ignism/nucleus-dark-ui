@@ -3,6 +3,8 @@
 @import "octicon-mixins";
 
 .settings-view {
+  font-size: @font-size;
+
   .breadcrumb {
     .text(light);
   }
@@ -128,29 +130,5 @@
     color: @text-color-highlight !important;
     border-color: @background-color-info !important;
     background: @background-color-info;
-  }
-
-  input[type="checkbox"] {
-    &:focus {
-      box-shadow: none;
-    }
-    &:before,
-    &:after {
-      background: @base-background-color;
-    }
-  }
-
-  select.form-control {
-    .button(@button-border-color);
-    .text(normal);
-    height: @input-height;
-    line-height: @input-height;
-    text-transform: none;
-
-    &:focus,
-    &:hover {
-      background: @background-color-highlight;
-      color: @text-color;
-    }
   }
 }

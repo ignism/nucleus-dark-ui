@@ -6,7 +6,6 @@ atom-panel.modal,
 .overlay {
   .overlay-shadow();
   .text(normal);
-  color: @text-color;
   background-color: @overlay-background-color;
   border-radius: @component-border-radius !important;
   border: 1px solid @base-border-color !important;
@@ -22,6 +21,7 @@ atom-panel.modal,
   atom-text-editor[mini],
   atom-text-editor[mini]::shadow {
     .text(heading);
+    color: @text-color-highlight;
     font-size: 24px;
     line-height: 32px;
     height: auto;

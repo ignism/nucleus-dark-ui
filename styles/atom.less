@@ -121,14 +121,14 @@ kbd {
 
   /deep/ ::-webkit-scrollbar-thumb {
     border-radius: 5px;
+    border: 1px solid @scrollbar-border-color;
     background: @scrollbar-color;
-    border: 1px solid transparent;
     background-clip: content-box;
 
     &:active,
     &:hover {
-      background: @scrollbar-color-active;
       border: 1px solid @scrollbar-border-color;
+      background: @scrollbar-color-active;
     }
   }
 
@@ -141,7 +141,11 @@ kbd {
 
     /deep/ ::-webkit-scrollbar-thumb {
       border: 1px solid @base-background-color;
-      background: fade(@scrollbar-color, 32%);
+      background: @scrollbar-color;
+      &:active,
+      &:hover {
+        border: 1px solid @base-background-color;
+      }
     }
   }
 }

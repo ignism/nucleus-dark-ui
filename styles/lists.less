@@ -14,6 +14,10 @@
     transition: color @transition-time/2 ease;
   }
 
+  li.selected:before {
+    background: @background-color-selected;
+  }
+
   li.selected .character-match {
     .text(selected);
     font-size: @font-size;

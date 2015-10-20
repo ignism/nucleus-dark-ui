@@ -8,7 +8,7 @@
 @theme-text-color-subtle:    mix(@syntax-background-color, @theme-text-color-accent, 72%);
 
 @theme-background-color:       @syntax-background-color;
-@theme-background-color-dark:  desaturate(darken(@syntax-background-color, 2%), 2%);
+@theme-background-color-dark:  desaturate(darken(@syntax-background-color, 4%), 2%);
 @theme-background-color-light: desaturate(lighten(@syntax-background-color, 6%), 2%);
 
 @theme-blue:   @syntax-color-renamed;
@@ -63,7 +63,7 @@
 @text-color-removed:   @text-color-error;
 
 // Editor ----------------------------------------------------------------------
-@indent-guide-color: @theme-background-color-light;
+@indent-guide-color: @theme-background-color-dark;
 @invisibles-color:   @theme-background-color-light;
 
 @gutter-background-color:          transparent;

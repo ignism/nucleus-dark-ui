@@ -107,7 +107,20 @@ linter-panel:empty {
 }
 
 // markdown-preview ------------------------------------------------------------
-.markdown-preview {
+.markdown-preview[data-use-github-style] {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif !important;
+    color: inherit;
+  }
+}
+
+.markdown-preview:not([data-use-github-style]) {
   color: @markdown-preview-color;
   background-color: @markdown-preview-background-color;
 

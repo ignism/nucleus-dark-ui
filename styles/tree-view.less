@@ -9,6 +9,7 @@ atom-workspace {
     background: @tree-view-background-color;
     padding: 0;
     box-sizing: border-box;
+    min-width: 100%;
 
     & > .directory {
       & > .header {
@@ -40,11 +41,18 @@ atom-workspace {
         &:after {
           content: "hide";
           .text(subtle);
-          font-size: 10px;
+          background: @tab-background-color-hover;
           position: absolute;
+          top: @tab-height/2 - 6px;
           right: @component-padding;
-          opacity: 0;
+          padding-left: 2px;
+          padding-right: 2px;
+          border-radius: 2px;
+          font-size: 10px;
+          height: 12px;
+          line-height: 12px;
           text-transform: uppercase;
+          opacity: 0;
           transform: scale(0);
           transition: all @transition-time ease;
         }

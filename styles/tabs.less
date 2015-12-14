@@ -18,12 +18,12 @@
     background: @tab-background-color;
     display: table-cell;
     width: 100%;
-    height: @tab-height - 1;
-    line-height: @tab-height - 1;
+    height: @tab-height;
+    line-height: @tab-height;
     box-sizing: border-box;
     border-left: 1px solid transparent;
     border-right: 1px solid transparent;
-    border-top: 1px solid @base-border-color;
+    border-top: 1px solid transparent;
     border-bottom: 1px solid @tab-border-color;
     padding-left: 20px !important;
     padding-right: 20px !important;
@@ -64,6 +64,7 @@
     color: @text-color-selected;
     background: @tab-background-color-active;
     width: 100%;
+    border-top: 1px solid @base-border-color;
     border-bottom: 1px solid transparent;
     border-left: 1px solid @base-border-color;
     border-right: 1px solid @base-border-color;
@@ -180,11 +181,4 @@
     left: 8px !important;
     right: auto !important;
   }
-}
-
-atom-workspace > atom-workspace-axis.horizontal > atom-workspace-axis.vertical > atom-pane-container > atom-pane-axis.horizontal > atom-pane-axis.vertical > atom-pane:first-child .tab,
-atom-workspace > atom-workspace-axis.horizontal > atom-workspace-axis.vertical > atom-pane-container > atom-pane-axis.horizontal > atom-pane .tab,
-atom-workspace > atom-workspace-axis.horizontal > atom-workspace-axis.vertical > atom-pane-container > atom-pane-axis.vertical > atom-pane:first-child .tab,
-atom-workspace > atom-workspace-axis.horizontal > atom-workspace-axis.vertical > atom-pane-container > atom-pane:first-child .tab {
-  border-top: 0 !important;
 }

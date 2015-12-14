@@ -11,11 +11,44 @@
 
   .alert {
     border: 0;
+
+    button.close {
+      background: transparent;
+      text-shadow: none;
+      border: 0 !important;
+      padding: 0 !important;
+      opacity: 1;
+
+      &:hover {
+        background: transparent;
+        &:before {
+          color: @text-color-highlight;
+        }
+      }
+
+      &:before {
+        margin-right: 0;
+        transition: color @transition-time ease;
+      }
+    }
   }
 
   .alert-info {
     color: @text-color-info;
     background: mix(@text-color-info, @base-background-color, 32%);
+
+    button.close:before {
+      color: @text-color-info;
+    }
+  }
+
+  .alert-danger {
+    color: @text-color-error;
+    background: mix(@text-color-error, @base-background-color, 32%);
+
+    button.close:before {
+      color: @text-color-error;
+    }
   }
 
   .text(normal);
@@ -91,7 +124,7 @@
 
   .package-container .row:not(:first-child) .package-card,
   .package-container > .package-card:not(:first-child) {
-    border-top: 1px solid @indent-guide-color;
+    border-top: 1px solid @base-border-color;
   }
 
   .collapsed .package-container .row {

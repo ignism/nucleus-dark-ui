@@ -12,6 +12,31 @@ autocomplete-suggestion-list.select-list.popover-list .suggestion-description-co
   color: @text-color;
 }
 
+// build -----------------------------------------------------------------------
+.build {
+  .title {
+    background: transparent !important;
+    &.success {
+      color: @text-color-success;
+    }
+    &.error {
+      color: @text-color-error;
+    }
+  }
+  .btn-container {
+    padding-left: 10px;
+    .btn {
+      .button(@button-border-color);
+
+      &.icon-zap {
+        .button-variant(@text-color-info);
+      }
+      &.icon-trashcan {
+        .button-variant(@text-color-error);
+      }
+    }
+  }
+}
 
 // mini-map --------------------------------------------------------------------
 atom-text-editor::shadow atom-text-editor-minimap::shadow .minimap-visible-area,

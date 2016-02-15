@@ -21,6 +21,9 @@ autocomplete-suggestion-list.select-list.popover-list .suggestion-description-co
 
 // build -----------------------------------------------------------------------
 .build {
+  border-left: 0;
+  animation: none !important;
+
   .title {
     background: transparent !important;
     &.success {
@@ -30,8 +33,16 @@ autocomplete-suggestion-list.select-list.popover-list .suggestion-description-co
       color: @text-color-error;
     }
   }
-  .btn-container {
-    padding-left: 10px;
+
+  .output {
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+
+  .control-container {
+    padding-left: 5px;
+    padding-right: 5px;
+    opacity: 1.0;
     .btn {
       .button(@button-border-color);
 

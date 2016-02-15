@@ -134,6 +134,7 @@ button.icon,
   &:hover {
     border-color: @color !important;
   }
+
   &.selected {
     color: @color !important;
   }
@@ -141,7 +142,7 @@ button.icon,
   &[disabled],
   &.disabled {
     opacity: 1;
-    background-color: transparent;
+    background-color: transparent !important;
     border-color: transparent !important;
     color: @text-color-subtle !important;
   }

@@ -444,3 +444,45 @@ atom-text-editor::shadow .gutter .line-number.atom-jshint-error,
 #jshint-status-pane {
   border-top: 0;
 }
+
+// color-picker ----------------------------------------------------------------
+.ColorPicker-body {
+  .overlay-shadow();
+  background: @overlay-background-color;
+  border: 1px solid @base-border-color;
+}
+
+.ColorPicker-body-saturation {
+  border: 1px solid @base-border-color;
+}
+
+.ColorPicker-body-alpha {
+  border: 1px solid @base-border-color;
+}
+
+.ColorPicker-body-hue {
+  border: 1px solid @base-border-color;
+}
+
+.ColorPicker-format {
+  background: @overlay-background-color;
+  border: 1px solid @base-border-color;
+}
+
+.ColorPicker-format-button {
+  background: @overlay-background-color;
+  color: @text-color-subtle;
+  border: 0 !important;
+  text-shadow: none !important;
+  border-radius: 0;
+}
+
+.ColorPicker-format-button.is--active {
+  background: @base-background-color;
+  color: @text-color-highlight;
+}
+
+.ColorPicker-format-button:hover {
+  background: @background-color-highlight !important;
+  color: @text-color-highlight !important;
+}

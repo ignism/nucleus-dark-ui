@@ -6,16 +6,6 @@
   font-size: @font-size;
   background: @tree-view-background-color;
   padding-top: 0;
-  .project-root.project-root.collapsed {
-    & > .header {
-      &:before {
-        display: none;
-      }
-      &:after {
-        content: "show";
-      }
-    }
-  }
 
   .project-root.project-root {
     &:first-child {
@@ -27,41 +17,35 @@
     }
 
     & > .header {
-      transition: all @transition-time ease;
       & .name {
         .text(bold);
         color: @text-color-highlight;
         line-height: @tab-height;
-        padding-left: 17px;
 
         &:before {
           display: none;
         }
       }
       &:before {
-        display: none;
-      }
-      &:after {
-        content: "hide";
-        .text(subtle);
-        background: @tree-view-background-color;
-        position: absolute;
-        top: @tab-height/2 - 6px;
-        right: @component-padding;
-        padding-left: 2px;
-        padding-right: 2px;
-        border-radius: 2px;
-        font-size: 10px;
-        height: 12px;
-        line-height: 12px;
-        text-transform: uppercase;
-        opacity: 0;
-        transform: scale(0);
         transition: all @transition-time ease;
+        opacity: 0;
       }
-      &:hover:after {
-        transform: scale(1);
-        opacity: 1;
+      &:hover {
+        &:before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .project-root.project-root.collapsed {
+    & > .header {
+      &:before {
+        opacity: 0;
+      }
+      &:hover {
+        &:before {
+          opacity: 1;
+        }
       }
     }
   }

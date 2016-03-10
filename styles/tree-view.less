@@ -2,99 +2,77 @@
 @import "ui-mixins.less";
 @import "octicon-mixins";
 
-atom-workspace {
-  .tree-view {
-    .text(normal);
-    font-size: @font-size;
-    background: @tree-view-background-color;
-    padding: 0;
-    min-width: 100%;
+.tree-view {
+  font-size: @font-size;
+  background: @tree-view-background-color;
+  padding-top: 0;
+  .project-root.project-root.collapsed {
+    & > .header {
+      &:before {
+        display: none;
+      }
+      &:after {
+        content: "show";
+      }
+    }
+  }
 
-    & > .directory {
-      & > .header {
-        transition: all @transition-time ease;
-        background: @tree-view-background-color;
-        height: @tab-height;
+  .project-root.project-root {
+    &:first-child {
+      padding-top: 0;
+    }
+    &:before {
+      height: @tab-height;
+      background-clip: padding-box;
+    }
+
+    & > .header {
+      transition: all @transition-time ease;
+      & .name {
+        .text(bold);
+        color: @text-color-highlight;
         line-height: @tab-height;
-
-        & span {
-          .text(bold);
-          color: @text-color-highlight;
-          transition: all @transition-time ease;
-
-          &.icon:before {
-            display: none;
-          }
-        }
-
-        &:hover {
-          & span {
-            color: @text-color-highlight;
-          }
-        }
+        padding-left: 17px;
 
         &:before {
-          visibility: hidden;
-        }
-
-        &:after {
-          content: "hide";
-          .text(subtle);
-          background: @tab-background-color-hover;
-          position: absolute;
-          top: @tab-height/2 - 6px;
-          right: @component-padding;
-          padding-left: 2px;
-          padding-right: 2px;
-          border-radius: 2px;
-          font-size: 10px;
-          height: 12px;
-          line-height: 12px;
-          text-transform: uppercase;
-          opacity: 0;
-          transform: scale(0);
-          transition: all @transition-time ease;
-        }
-
-        &:hover {
-          background: @tab-background-color-hover;
-
-          &:after {
-            opacity: 1.0;
-            transform: scale(1);
-          }
+          display: none;
         }
       }
-
-      & > .entries {
-        opacity: 1;
-        padding-bottom: @component-padding;
+      &:before {
+        display: none;
+      }
+      &:after {
+        content: "hide";
+        .text(subtle);
+        background: @tree-view-background-color;
+        position: absolute;
+        top: @tab-height/2 - 6px;
+        right: @component-padding;
+        padding-left: 2px;
+        padding-right: 2px;
+        border-radius: 2px;
+        font-size: 10px;
+        height: 12px;
+        line-height: 12px;
+        text-transform: uppercase;
+        opacity: 0;
+        transform: scale(0);
         transition: all @transition-time ease;
       }
-    }
-
-    & > .directory.collapsed {
-      & > .header {
-        & span {
-          color: @text-color-subtle;
-        }
-
-        &:hover {
-          & span {
-            color: @text-color-highlight;
-          }
-        }
-
-        &:after {
-          content: "show";
-        }
-      }
-
-      & > .entries {
-        display: block !important;
-        padding-bottom: 0;
-        opacity: 0;
+      &:hover:after {
+        transform: scale(1);
+        opacity: 1;
       }
     }
+  }
+
+  .directory.selected:before {
+    background: transparent !important;
+  }
+}
+
+.tree-view-resizer {
+  .tree-view-resize-handle {
+    width: 8px;
   }
 }

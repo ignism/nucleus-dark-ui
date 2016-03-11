@@ -20,6 +20,7 @@
       & .name {
         .text(bold);
         color: @text-color-highlight;
+        height: @tab-height + 1px;
         line-height: @tab-height;
 
         &:before {
@@ -27,6 +28,7 @@
         }
       }
       &:before {
+        color: @theme-text-color-highlight;
         transition: all @transition-time ease;
         opacity: 0;
       }

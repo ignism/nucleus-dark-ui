@@ -491,23 +491,27 @@ atom-text-editor::shadow .gutter .line-number.atom-jshint-error,
 .tree-view-open-files {
   border-bottom: 1px solid @base-border-color;
   & > .list-tree {
-    padding-left: 0;
+    padding-left: 10px;
     padding-bottom: 0 !important;
   }
   .list-tree {
     padding-bottom: 10px;
     & > .list-nested-item > .list-item,
     & > .list-nested-item.collapsed > .list-item, {
-      padding-left: 17px;
-      height: @tab-height + 1px;
-      line-height: @tab-height;
+       height: @tab-height + 1px;
+       line-height: @tab-height;
       margin-left: 0 !important;
       &:before {
-        display: none;
+        color: @text-color-subtle;
+        transition: all 400ms ease;
+        opacity: 0;
+      }
+      &:hover:before {
+        opacity: 1;
       }
       & > .name {
         .text(bold);
-        color: @text-color-subtle;
+          color: @text-color-subtle;
         &:before {
           display: none;
         }
@@ -526,7 +530,9 @@ atom-text-editor::shadow .gutter .line-number.atom-jshint-error,
         transform: scale(1);
       }
     }
+
     .list-item > button {
+      color: @text-color-highlight;
       opacity: 0;
       border: 0 !important;
       padding-left: 0;

@@ -62,12 +62,13 @@ button.icon,
 }
 
 .btn-group {
-  & > .btn:first-child {
-    border-left: 1px solid @button-border-color !important;
+  & > .btn:first-child:not(:last-child) {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
   }
-
-  & > .btn:last-child {
-    border-right: 1px solid @button-border-color !important;
+  & > .btn:last-child:not(:first-child) {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
   }
 }
 

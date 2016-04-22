@@ -12,7 +12,7 @@ atom-panel.modal,
   padding: @component-padding @component-padding*2;
   width: 680px;
   margin-left: -340px;
-  
+
   @media (max-width: 680px) {
     & {
       width: 100%;
@@ -27,6 +27,8 @@ atom-panel.modal,
   }
 
   atom-text-editor[mini],
+  atom-text-editor.mini,
+  atom-text-editor.mini::shadow,
   atom-text-editor[mini]::shadow {
     .text(heading);
     color: @text-color-highlight;
@@ -36,11 +38,10 @@ atom-panel.modal,
     max-height: none;
     background-color: transparent;
     margin: 0 -@component-padding*2;
-    padding: 0 @component-padding*2 @component-padding @component-padding*2;
+    padding: 0 @component-padding*2 @component-padding @component-padding*4;
     border: 0;
     border-radius: 0;
     border-bottom: 1px solid @base-border-color;
-
 
     &.is-focused:hover,
     &:hover {
@@ -111,6 +112,7 @@ atom-panel.modal {
     padding-right: @component-padding;
     -webkit-font-smoothing: antialiased;
     content: "\f011";
+    margin-left: -@component-padding*2;
   }
 
   & > .command-palette > atom-text-editor[mini]:before {

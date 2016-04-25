@@ -12,6 +12,39 @@ autocomplete-suggestion-list.select-list.popover-list .suggestion-description-co
   color: @text-color;
 }
 
+// terminal-plus ---------------------------------------------------------------
+.terminal-plus {
+  &.terminal-view {
+    .btn-toolbar {
+      padding-bottom: @component-padding;
+      .btn {
+        .button(@button-border-color);
+
+        margin: 0 1px;
+
+        &.left {
+          margin-left: @component-padding/2;
+        }
+        &.right:last-child {
+          margin-right: @component-padding/2;
+        }
+        .icon:before{
+          width: initial;
+        }
+      }
+    }
+  }
+
+  &.status-bar .icon-x {
+    color: @text-color;
+  }
+
+  .xterm {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+}
+
 // script ----------------------------------------------------------------------
 .script-view {
   pre {
@@ -37,6 +70,12 @@ autocomplete-suggestion-list.select-list.popover-list .suggestion-description-co
   .output {
     margin-top: 5px;
     margin-bottom: 10px;
+
+    .terminal {
+      padding-left: @component-padding/2;
+      padding-right: @component-padding/2;
+      font-weight: normal;
+    }
   }
 
   .control-container {
@@ -50,7 +89,10 @@ autocomplete-suggestion-list.select-list.popover-list .suggestion-description-co
         .button-variant(@text-color-info);
       }
       &.icon-trashcan {
-        .button-variant(@text-color-error);
+        .button-variant(@text-color-warning);
+      }
+      &.icon-x {
+        .button(@button-border-color);
       }
     }
   }

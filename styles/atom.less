@@ -164,8 +164,8 @@ atom-text-editor[mini]::shadow {
   line-height: @input-height - 2px;
 
   &:hover {
-    border: 1px solid @input-border-color;// !important;
-    color: @text-color-highlight;// !important;
+    border: 1px solid @input-border-color;
+    color: @text-color-highlight;
   }
 
   .placeholder-text {
@@ -176,10 +176,6 @@ atom-text-editor[mini]::shadow {
 
   .cursor {
     border-color: @text-color;
-  }
-
-  .selection .region {
-    //background-color: @background-color-highlight;// !important;
   }
 }
 
@@ -194,13 +190,13 @@ atom-text-editor[mini].is-focused::shadow {
 
 
   &:hover {
-    border: 1px solid @text-color-highlight;// !important;
-    background-color: @input-background-color-active;// !important;
-    color: @text-color-highlight;// !important;
+    border: 1px solid @text-color-highlight;
+    background-color: @input-background-color-active;
+    color: @text-color-highlight;
   }
 
   .selection .region {
-    //background-color: @background-color-highlight;// !important;g
+    background-color: fade(@background-color-highlight, 40%);
   }
 }
 

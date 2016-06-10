@@ -168,6 +168,11 @@ atom-text-editor[mini]::shadow {
     color: @text-color-highlight;
   }
 
+  .text,
+  .source {
+    color: @text-color;
+  }
+
   .placeholder-text {
     .text(subtle);
     height: @input-height;
@@ -184,7 +189,8 @@ atom-text-editor[mini].is-focused::shadow {
   border: 1px solid @input-border-color;
   background-color: @input-background-color-active;
 
-  .text {
+  .text,
+  .source {
     color: @input-text-color-active;
   }
 

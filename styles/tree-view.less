@@ -7,7 +7,9 @@
   background: @tree-view-background-color;
   padding-top: 0;
 
-  .project-root.project-root {
+  .project-root {
+    padding-top: @component-padding;
+    padding-bottom: @component-padding;
     &:first-child {
       padding-top: 0;
     }
@@ -60,5 +62,21 @@
 .tree-view-resizer {
   .tree-view-resize-handle {
     width: 8px;
+  }
+}
+
+@media (max-width: 1280px), (max-height: 800px) {
+  .tree-view {
+    .project-root.project-root {
+      &:before {
+        height: @tab-height * 0.8;
+      }
+      & > .header {
+        & .name {
+          height: @tab-height * 0.8 + 1px;
+          line-height: @tab-height * 0.8;
+        }
+      }
+    }
   }
 }

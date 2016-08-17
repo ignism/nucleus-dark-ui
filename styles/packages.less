@@ -535,9 +535,15 @@ atom-text-editor::shadow .gutter .line-number.atom-jshint-error,
 // tree-view-open-files --------------------------------------------------------
 .tree-view-open-files {
   border-bottom: 0;
+  padding-bottom: @component-padding;
+
   & > .list-tree {
     padding-left: 10px;
     padding-bottom: 0 !important;
+
+    & > .list-item {
+      height: @tab-height;
+    }
   }
   .list-tree {
     padding-bottom: 10px;
@@ -562,6 +568,7 @@ atom-text-editor::shadow .gutter .line-number.atom-jshint-error,
         }
       }
     }
+
     .list-item {
       color: @text-color-subtle;
       margin-left: 24px !important;
@@ -596,6 +603,18 @@ atom-text-editor::shadow .gutter .line-number.atom-jshint-error,
     }
   }
 }
+
+@media (max-width: 1280px), (max-height: 800px) {
+  .tree-view-open-files {
+    border-bottom: 0;
+
+    & > .list-tree > .list-nested-item > .list-item {
+      height: @tab-height * 0.8;
+    }
+  }
+}
+
+
 
 // atom-elixir -----------------------------------------------------------------
 .elixir-quoted-view {

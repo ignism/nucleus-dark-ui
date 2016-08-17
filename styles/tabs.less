@@ -124,7 +124,7 @@
   .tab.modified:not(:hover) .close-icon {
     opacity: 1;
     transform: scale(1);
-    top: 12px;
+    top: (@tab-height - 6) / 2;
     right: 8px;
     display: inline-block;
     border-color: @background-color-warning;
@@ -181,7 +181,6 @@
   }
 
   .tab.modified:not(:hover) .close-icon {
-    top: 12px !important;
     left: 8px !important;
     right: auto !important;
   }
@@ -194,7 +193,9 @@
     .tab {
       height: @tab-height * 0.8;
       line-height: @tab-height * 0.8;
-
+      &.modified:not(:hover) .close-icon {
+        top: ((@tab-height * 0.8) - 6) / 2;
+      }
       .close-icon {
         top: ((@tab-height * 0.8) - 16) / 2;
       }

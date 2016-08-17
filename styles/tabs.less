@@ -2,7 +2,6 @@
 @import "ui-mixins.less";
 @import "octicon-mixins";
 
-
 .tab-bar {
   background: @tab-bar-background-color;
   width: 100%;
@@ -34,9 +33,9 @@
     position: relative;
     transition: color @transition-time ease, border @transition-time ease, background @transition-time ease;
 
-    .status-modified,
     .status-added,
-    .status-ignored {
+    .status-ignored,
+    .status-modified {
       transition: color @transition-time ease, background @transition-time ease;
 
       &:hover {
@@ -140,7 +139,6 @@
     }
   }
 
-
   .tab .close-icon {
     top: (@tab-height - 16) / 2;
     height: 16px;
@@ -185,7 +183,6 @@
     right: auto !important;
   }
 }
-
 @media (max-width: 1280px), (max-height: 800px) {
   .tab-bar {
     height: @tab-height * 0.8;
@@ -197,6 +194,7 @@
       &.modified:not(:hover) .close-icon {
         top: ((@tab-height * 0.8) - 6) / 2;
       }
+
       .close-icon {
         top: ((@tab-height * 0.8) - 16) / 2;
       }

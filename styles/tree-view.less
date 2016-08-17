@@ -10,9 +10,11 @@
   .project-root {
     padding-top: @component-padding;
     padding-bottom: @component-padding;
+
     &:first-child {
       padding-top: 0;
     }
+
     &:before {
       height: @tab-height;
       background-clip: padding-box;
@@ -29,11 +31,13 @@
           display: none;
         }
       }
+
       &:before {
         color: @theme-text-color-highlight;
         transition: all @transition-time ease;
         opacity: 0;
       }
+
       &:hover {
         &:before {
           opacity: 1;
@@ -41,11 +45,13 @@
       }
     }
   }
+
   .project-root.project-root.collapsed {
     & > .header {
       &:before {
         opacity: 0;
       }
+
       &:hover {
         &:before {
           opacity: 1;
@@ -64,13 +70,13 @@
     width: 8px;
   }
 }
-
 @media (max-width: 1280px), (max-height: 800px) {
   .tree-view {
     .project-root.project-root {
       &:before {
         height: @tab-height * 0.8;
       }
+
       & > .header {
         & .name {
           height: @tab-height * 0.8 + 1px;

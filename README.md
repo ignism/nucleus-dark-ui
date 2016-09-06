@@ -13,7 +13,7 @@ Or install directly from the console:
 Every color used in the UI is taken directly from a (dark) syntax theme. In order for this to work, the syntax theme needs to have a `syntax-variables.less`. A light version of this theme is still being worked on.
 
 #### Support
-[Buy me a coffee to keep me going](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YW2GB7ABTVCVA)
+[Buy me a coffee to keep me going](https://www.paypal.me/ignism)
 
 ## Features
 - Clutterless new windows with a flat background.

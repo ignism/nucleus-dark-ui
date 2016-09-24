@@ -1,93 +1,97 @@
-@btn-padding: 0 @ui-size/1.25;
-@btn-height: @ui-size*2.5;
+* {
+  box-sizing: border-box;
+}
 
-// Mixins ----------------------------------------------------------------------
-.button(@color) {
-  .transition();
-  color: @color;
-  text-shadow: none;
-  border: 1px solid @color;
-  background: transparent;
+html {
+  font-size: @font-size;
+}
 
-  &:focus,
-  &:active:focus {
-    outline: none;
+atom-workspace {
+  background-color: @app-background-color;
+}
+
+status-bar {
+  .text(subtle);
+  background: @base-border-color;
+  height: @tab-height;
+  line-height: @component-line-height;
+  font-size: 0.8rem;
+  z-index: +1000;
+
+  & > .flexbox-repaint-hack {
+    padding-top: 3px;
   }
 
-  &:focus,
-  &:hover,
-  &.selected {
-    border-color: @color;
-    color: @base-background-color;
-    background: @color;
-  }
-
-  &:active {
-    background: @color;
-    box-shadow: none;
-  }
-
-  &.selected:focus,
-  &.selected:hover {
-    background: @color;
-  }
-
-  &[disabled],
-  &.disabled {
-    opacity: 1;
-    background-color: transparent !important;
-    border-color: transparent !important;
-    color: @text-color-subtle;
-  }
-
-  &:first-child {
-    border: 1px solid @color;
-    border-top-left-radius: @component-border-radius;
-    border-bottom-left-radius: @component-border-radius;
-  }
-
-  &.selected:last-child,
-  &:last-child {
-    border: 1px solid @color;
-    border-top-right-radius: @component-border-radius;
-    border-bottom-right-radius: @component-border-radius;
+  span {
+    font-size: 0.8rem;
   }
 }
-// Buttons ---------------------------------------------------------------------
-.btn {
-  height: @btn-height;
-  line-height: @btn-height;
-  padding: @btn-padding;
-  font-size: @ui-size;
+
+.title-bar {
+  background: @app-background-color;
+  border-color: transparent;
 }
 
-.btn.btn-xs {
-  font-size: @ui-size/1.5;
-}
-.btn.btn-sm {
-  font-size: @ui-size/1.25;
-}
-.btn.btn-lg {
-  font-size: @ui-size*1.25;
+// Keyboard Shortcuts ----------------------------------------------------------
+kbd, .keystroke {
+  .text(invert);
+  font-size: @font-size;
+  font-family: @font-family;
+  line-height: @component-line-height;
+  background: @background-color-info;
+  padding: 2px 4px;
+  border: 0;
+  border-radius: 2px;
 }
 
-.btn-group > .btn,
-.btn,
-.btn.btn-default {
-  .button(@text-color);
+// Close icons -----------------------------------------------------------------
+.close-icon::before,
+.icon-x::before,
+.icon.x::before {
+  content: '✕' !important;
 }
-.btn.btn-primary {
-  .button(@text-color-info);
-}
-.btn.btn-info {
-  .button(@text-color-info);
-}
-.btn.btn-success {
-  .button(@text-color-success);
-}
-.btn.btn-warning {
-  .button(@text-color-warning);
-}
-.btn.btn-error {
-  .button(@text-color-error);
+
+// Scrollbars ------------------------------------------------------------------
+.scrollbars-visible-always {
+  /deep/::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  /deep/::-webkit-scrollbar-track {
+    background: @scrollbar-background-color;
+  }
+
+  /deep/::-webkit-scrollbar-corner {
+    background: @scrollbar-background-color;
+  }
+
+  /deep/::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    border: 3px solid @scrollbar-background-color;
+    background: @scrollbar-color;
+    background-clip: content-box;
+
+    &:active,
+    &:hover {
+      border-width: 1px;
+    }
+  }
+
+  atom-text-editor,
+  atom-pane-container,
+  atom-panel-container.bottom {
+    /deep/::-webkit-scrollbar-track {
+      background: @base-background-color;
+    }
+
+    /deep/::-webkit-scrollbar-corner {
+      background: @base-background-color;
+    }
+
+    /deep/::-webkit-scrollbar-thumb {
+      border-color: @base-background-color;
+      background: @scrollbar-color;
+    }
+  }
 }

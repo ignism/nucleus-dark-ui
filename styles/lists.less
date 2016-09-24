@@ -1,53 +1,34 @@
-@import "ui-variables.less";
-@import "ui-mixins.less";
-@import "octicon-mixins";
+// Mixins ----------------------------------------------------------------------
+
+.generate-list-item-text-color(@class) {
+  li:not(.list-nested-item).text-@{class},
+  li.list-nested-item.text-@{class} > .list-item {
+    .text(@class);
+  }
+}
+
+.generate-list-item-status-color(@color, @status) {
+  li:not(.list-nested-item).status-@{status},
+  li.list-nested-item.status-@{status} > .list-item {
+    color: @color;
+  }
+
+  li:not(.list-nested-item).selected.status-@{status},
+  li.list-nested-item.selected.status-@{status} > .list-item {
+    color: @color;
+  }
+}
+
+// Lists -----------------------------------------------------------------------
 
 .list-group,
 .list-tree {
-  li .character-match {
-    .text(normal);
-    transition: color @transition-time/2 ease;
-  }
-
-  li:hover .character-match {
-    .text(highlight);
-    transition: color @transition-time/2 ease;
-  }
-
-  li.selected:before {
-    background: @background-color-selected;
-  }
-
-  li.selected .character-match {
-    .text(selected);
-    font-size: @font-size;
-  }
-
-  li.selected .word {
-    color: @text-color-selected !important;
-  }
-
-  li,
-  li.list-item {
-    transition: color @transition-time/2 ease;
-  }
-
-  li:hover,
-  li.list-item:hover {
-    .text(highlight);
-  }
-
   li:not(.list-nested-item),
   li.list-nested-item > .list-item {
     .text(normal);
+    .transition(color);
   }
 
-  .generate-list-item-text-color(@class) {
-    li:not(.list-nested-item).text-@{class},
-    li.list-nested-item.text-@{class}> .list-item {
-      .text(@class);
-    }
-  }
   .generate-list-item-text-color(subtle);
   .generate-list-item-text-color(info);
   .generate-list-item-text-color(success);
@@ -55,79 +36,69 @@
   .generate-list-item-text-color(error);
   .generate-list-item-text-color(selected);
 
-  .generate-list-item-status-color(@color, @status) {
-    li:not(.list-nested-item).status-@{status},
-    li.list-nested-item.status-@{status}> .list-item {
-      color: @color;
-    }
-
-    li:not(.list-nested-item).selected.status-@{status},
-    li.list-nested-item.selected.status-@{status}> .list-item {
-      color: @color;
-    }
-  }
-  .generate-list-item-status-color(@text-color-subtle, ignored);
   .generate-list-item-status-color(@text-color-added, added);
-  .generate-list-item-status-color(@text-color-renamed, renamed);
+  .generate-list-item-status-color(@text-color-ignored, ignored);
   .generate-list-item-status-color(@text-color-modified, modified);
   .generate-list-item-status-color(@text-color-removed, removed);
+  .generate-list-item-status-color(@text-color-renamed, renamed);
 
   li:not(.list-nested-item).selected,
   li.list-nested-item.selected > .list-item {
     .text(selected);
-    font-size: @font-size
+  }
+  li:hover {
+    .text(highlight);
+  }
+  .no-icon {
+    //padding-left: calc(@ui-padding-icon ~"+" @component-icon-size);
+  }
+
+  li.selected::before {
+    background: @background-color-selected;
   }
 }
 
 .select-list ol.list-group,
 &.select-list ol.list-group {
-  li pre {
-    margin-bottom: 0;
-  }
-
   li.two-lines {
     .secondary-line {
-      .text(subtle);
+      color: @text-color-subtle;
     }
-
     &.selected .secondary-line {
-      .text(selected);
+      color: @text-color-highlight;
     }
   }
 
+  // We want to highlight the background of the list items because we dont
+  // know their size.
   li.selected {
     background-color: @background-color-selected;
 
     &:before {
       display: none;
     }
-
-    pre {
-      border-color: @text-color-highlight;
-    }
   }
 
   &.mark-active {
     @active-icon-size: 14px;
 
+    // pad in front of the text where the icon would be We'll pad the non-
+    // active items with a 'fake' icon so other classes can pad the item
+    // without worrying about the icon padding.
     li:before {
       content: '';
       background-color: transparent;
       position: static;
       display: inline-block;
-      left: auto;
-      right: auto;
+      left: auto; right: auto;
       height: @active-icon-size;
       width: @active-icon-size;
     }
-
     > li:not(.active):before {
       margin-right: @component-icon-padding;
     }
-
     li.active {
       .octicon(check, @active-icon-size);
-
       &:before {
         margin-right: @component-icon-padding;
         color: @text-color-success;
@@ -136,38 +107,37 @@
   }
 }
 
-.select-list.popover-list {
-  .overlay-shadow();
+.select-list.popover-list,
+.autocomplete-suggestion-list.select-list.popover-list  {
+  .shadow();
+  .text(invert);
+
+  .character-match {
+    .text(invert);
+  }
+
+  .suggestion-description {
+    background: @overlay-border-color;
+
+    span,
+    a {
+      font-size: 0.8rem;
+    }
+  }
+
+
+
   background-color: @overlay-background-color;
-  border-radius: @component-border-radius !important;
-  border: 1px solid @overlay-border-color !important;
+  border-radius: @component-border-radius;
+  border: 0;
 
   atom-text-editor {
     margin-bottom: @component-padding/2;
   }
 
   .list-group li {
+    .text(invert);
     padding-left: @component-padding/2;
-    transition: color @transition-time/2 ease;
+    .transition(color);
   }
-}
-
-.ui-sortable {
-  li {
-    line-height: 2.5;
-  }
-
-  li.ui-sortable-placeholder {
-    visibility: visible !important;
-    background-color: darken(@pane-item-background-color, 10%);
-  }
-}
-
-li.ui-draggable-dragging,
-li.ui-sortable-helper {
-  line-height: @component-line-height;
-  height: @component-line-height;
-  list-style: none;
-  padding: 0 @component-padding;
-  background: @background-color-highlight;
 }

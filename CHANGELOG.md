@@ -1,20 +1,3 @@
-## 0.9.4 - The Flatter Release
-In preparation of Atom version 1.11.X and its awesome custom title-bar I removed the border that came with it. While doing so I removed even more borders that weren't really necessary because of the difference between background colors. Overall I think it looks fresher.
-
-
-
-## 0.6.0 - The Contrast Release
-before going into the changes, I want to say that this is the first log entry I make since for the first time I feel this release needs one. Behind the curtains I did a lot of changes to the look and feel of the UI. Without pushing it as an actual patch. I did this to deliver the package as a whole, I even considered this to be the fist major push. Yett I didn't because there will still be some bugs in this new look I have not discovered yet.
-
-So why the changes? Nuclues became dull to me, but I couldn't grasp why. Then I noticed it looked a bit grey, because for the UI I lightened the syntax-background-color to create my panel color and darkened the syntax-text-color to get the UI text color. And I coulnd't unsee that overall greyness. So I decided to add more contrast. To achieve this I made the following changes.
-
-* Buttons now have one bright border and text color and will stand of from the background.
-  * Disabled buttons however are only visible through subtle text, this removes distraction from unusable elements.
-* `theme-background-color-light`, used for background other than the editor has been changed into a darker tone from the editor color, is now called `theme-background-color-dark`.
-* input through `atom-text-editor[mini]` now looks different from a click button to make its function more clear.
-
-
-
-## 0.1.0 - First Release
-* Every feature added
-* Every bug fixed
+## 0.10.0
+### The Almost-There-Release
+Ever since I started this project, before the launch of atom 1.0.0, this theme has gone through some tweaking over time. Sometimes this created bugs in other packages. Because of limited time, most of the time I fixed it with a quick hack. Threw in some `!important` left and right. However these hacks where catching up to me, I felt like every time I fixed something I created another bug somewhere else. So I decided to start from scratch again. Behind the scenes I've been working inside a new repo and I feel I cleaned up a lot of code that was unnecessary and I think I am almost there, I can finally release the 1.0.0 version of this theme. Just not yet, I want to push this minor patch first to see everything works out as well for you as it does for me.

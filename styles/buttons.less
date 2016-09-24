@@ -1,121 +1,35 @@
-@import "ui-variables.less";
-@import "ui-mixins.less";
-@import "octicon-mixins";
-
-// Buttons ---------------------------------------------------------------------
-button,
-button.icon,
-.btn-default,
-.btn {
-  .button(@button-border-color);
-
-  &:focus,
-  &:active:focus {
-    outline: 0;
-    border: 1px solid @text-color-selected !important;
-  }
-
-  &.btn-xs {
-    font-size: 10px;
-    padding: 0 4px;
-    height: 16px;
-    line-height: 16px;
-  }
-
-  &.btn-sm {
-    font-size: 11px;
-    padding: 0 8px;
-    height: 24px;
-    line-height: 24px;
-  }
-
-  &.btn-lg {
-    font-size: 13px;
-    padding: 0 12px;
-    height: 40px;
-    line-height: 40px;
-  }
-
-  &.btn-primary {
-    .button-variant(@text-color-info);
-  }
-
-  &.btn-info {
-    .button-variant(@text-color-info);
-  }
-
-  &.btn-success {
-    .button-variant(@text-color-success);
-  }
-
-  &.btn-warning {
-    .button-variant(@text-color-warning);
-  }
-
-  &.btn-error {
-    .button-variant(@text-color-error);
-  }
-
-  &.status-indicator {
-    border-width: 0 !important;
-  }
-}
-
-.btn-group {
-  & > .btn:first-child:not(:last-child) {
-    border-top-right-radius: 0 !important;
-    border-bottom-right-radius: 0 !important;
-  }
-  & > .btn:last-child:not(:first-child) {
-    border-top-left-radius: 0 !important;
-    border-bottom-left-radius: 0 !important;
-  }
-}
+@btn-padding: 0 @ui-size/1.25;
+@btn-height: @ui-size*2.5;
 
 // Mixins ----------------------------------------------------------------------
 .button(@color) {
-  color: @text-color;
-  font-size: 12px;
-  font-weight: 400;
+  .transition();
+  color: @color;
+  text-shadow: none;
+  border: 1px solid @color;
   background: transparent;
-  height: @input-height;
-  line-height: @input-height;
-  border-radius: @component-border-radius;
-  border-color: @color;
-  border-width: 1px !important;
-  border-style: solid !important;
-  box-shadow: none !important;
-  transition: all @transition-time ease;
-  padding: 0 10px;
 
-  &:focus {
+  &:focus,
+  &:active:focus {
     outline: none;
   }
 
   &:focus,
-  &:hover {
-    color: @base-background-color !important;
-    background: @color !important;
-    border-color: @color !important;
-  }
-
-  &:active,
-  &:active:focus {
+  &:hover,
+  &.selected {
+    border-color: @color;
     color: @base-background-color;
     background: @color;
-    border: 1px solid @text-color-selected !important;
   }
 
-  &.selected {
-    color: @base-background-color;
-    background: @button-background-color-selected;
-    border: 1px solid @color !important;
+  &:active {
+    background: @color;
+    box-shadow: none;
+  }
 
-    &:hover {
-      color: @base-background-color !important;
-      border: 1px solid @text-color-highlight !important;
-      background: @color !important;
-    }
+  &.selected:focus,
+  &.selected:hover {
+    background: @color;
   }
 
   &[disabled],
@@ -123,30 +37,57 @@ button.icon,
     opacity: 1;
     background-color: transparent !important;
     border-color: transparent !important;
-    color: @text-color-subtle !important;
+    color: @text-color-subtle;
+  }
+
+  &:first-child {
+    border: 1px solid @color;
+    border-top-left-radius: @component-border-radius;
+    border-bottom-left-radius: @component-border-radius;
+  }
+
+  &.selected:last-child,
+  &:last-child {
+    border: 1px solid @color;
+    border-top-right-radius: @component-border-radius;
+    border-bottom-right-radius: @component-border-radius;
   }
 }
+// Buttons ---------------------------------------------------------------------
+.btn {
+  height: @btn-height;
+  line-height: @btn-height;
+  padding: @btn-padding;
+  font-size: @ui-size;
+}
 
-.button-variant(@color) {
-  .button(@color);
-  color: @color !important;
-  border-color: @color !important;
-  background: transparent;
+.btn.btn-xs {
+  font-size: @ui-size/1.5;
+}
+.btn.btn-sm {
+  font-size: @ui-size/1.25;
+}
+.btn.btn-lg {
+  font-size: @ui-size*1.25;
+}
 
-  &:hover {
-    border-color: @color !important;
-  }
-
-  &.selected {
-    color: @base-background-color !important;
-    background: @color !important;
-  }
-
-  &[disabled],
-  &.disabled {
-    opacity: 1;
-    background-color: transparent !important;
-    border-color: transparent !important;
-    color: @text-color-subtle !important;
-  }
+.btn-group > .btn,
+.btn,
+.btn.btn-default {
+  .button(@text-color);
+}
+.btn.btn-primary {
+  .button(@text-color-info);
+}
+.btn.btn-info {
+  .button(@text-color-info);
+}
+.btn.btn-success {
+  .button(@text-color-success);
+}
+.btn.btn-warning {
+  .button(@text-color-warning);
+}
+.btn.btn-error {
+  .button(@text-color-error);
 }

@@ -1,7 +1,3 @@
-@import "ui-variables.less";
-@import "ui-mixins.less";
-@import "octicon-mixins";
-
 body {
   font-weight: 400;
 }
@@ -100,10 +96,9 @@ h6,
 
 .highlight-type(@color) {
   .text(normal);
-  font-family: inherit !important;
   padding-left: @component-padding/2;
   padding-right: @component-padding/2;
-  color: @theme-background-color !important;
+  color: @base-background-color;
   border-radius: @component-border-radius;
   background-color: @color;
 }
@@ -116,8 +111,8 @@ pre {
 
 code {
   padding: 2px 4px;
-  font-size: 90%;
-  color: @text-color-info;
+  font-size: 0.9em;
+  color: @text-color-highlight;
   background-color: @base-border-color;
   border-radius: 4px;
 }

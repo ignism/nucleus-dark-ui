@@ -1,0 +1,17 @@
+background-tips .background-message .message   .keystroke {
+    .text(invert);
+    font-size: 1em;
+    font-family: @font-family;
+    line-height: @component-line-height;
+    background: @background-color-info;
+    padding: 2px 4px;
+    border: 0;
+    border-radius: 4px;
+}
+
+.background-message {
+  & > * {
+    .text(heading);
+    .text(subtle);
+  }
+}

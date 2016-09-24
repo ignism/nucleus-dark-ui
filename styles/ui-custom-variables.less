@@ -1,0 +1,20 @@
+@import "syntax-variables";
+
+@ui-text-color-highlight: rgb(255, 255, 255);
+@ui-text-color-accent:    mix(@syntax-text-color, @ui-text-color-highlight, 50%);
+@ui-text-color-normal:    mix(@syntax-background-color, @ui-text-color-accent, 32%);
+@ui-text-color-subtle:    mix(@syntax-background-color, @ui-text-color-accent, 72%);
+
+@ui-background-level-1:  desaturate(darken(@syntax-background-color, 4%), 2%);
+@ui-background-level-2:       @syntax-background-color;
+@ui-background-level-3: fade(desaturate(lighten(@syntax-background-color, 16%), 2%), 50%);
+@ui-background-level-4: @ui-text-color-normal;
+
+@ui-blue:   @syntax-color-renamed;
+@ui-green:  @syntax-color-added;
+@ui-orange: @syntax-color-modified;
+@ui-red:    @syntax-color-removed;
+
+@ui-size: 1rem;
+@ui-line-height: 1.3em;
+@ui-input-font: Menlo, Monaco, Consolas, 'Courier New', monospace;

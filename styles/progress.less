@@ -1,7 +1,3 @@
-@import "ui-variables.less";
-@import "ui-mixins.less";
-@import "octicon-mixins";
-
 // Spinner ---------------------------------------------------------------------
 .loading-spinner(@size) {
   width: @size;
@@ -38,8 +34,7 @@ progress {
   -webkit-appearance: none;
   height: 8px;
   border-radius: @component-border-radius;
-  background-color: @input-background-color;
-  box-shadow: inset 0 0 0 1px @input-border-color;
+  background-color: @base-border-color;
 
   &::-webkit-progress-bar {
     background-color: transparent;
@@ -47,14 +42,14 @@ progress {
 
   &::-webkit-progress-value {
     border-radius: @component-border-radius;
-    background-color: @progress-background-color;
+    background-color: @background-color-info;
   }
 
   // Is buffering (when no value is set)
   &:indeterminate {
     background-image:
-       linear-gradient(-45deg, transparent 33%, @progress-background-color 33%,
-                               @progress-background-color 66%, transparent 66%);
+       linear-gradient(-45deg, transparent 33%, @background-color-info 33%,
+                               @background-color-info 66%, transparent 66%);
     background-size: 24px 8px, 100% 100%, 100% 100%;
     -webkit-animation: progress-buffering 5s linear 6; // stop animation after 6 runs (30s) to limit CPU usage
   }

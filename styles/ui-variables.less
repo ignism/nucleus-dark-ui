@@ -1,161 +1,98 @@
-@import "syntax-variables";
+@import "ui-custom-variables";
 
-// UI Theme colors -------------------------------------------------------------
-@theme-text-color-highlight: rgb(255, 255, 255);
-@theme-text-color-accent:    mix(@syntax-text-color, @theme-text-color-highlight, 50%);
-@theme-text-color-normal:    mix(@syntax-background-color, @theme-text-color-accent, 32%);
-@theme-text-color-subtle:    mix(@syntax-background-color, @theme-text-color-accent, 72%);
+// Text Colors -----------------------------------------------------------------
 
-@theme-background-color:       @syntax-background-color;
-@theme-background-color-dark:  desaturate(darken(@syntax-background-color, 4%), 2%);
-@theme-background-color-light: desaturate(lighten(@syntax-background-color, 6%), 2%);
+@text-color:           @ui-text-color-normal;
+@text-color-subtle:    @ui-text-color-subtle;
+@text-color-highlight: @ui-text-color-highlight;
+@text-color-selected:  @ui-text-color-highlight;
 
-@theme-blue:   @syntax-color-renamed;
-@theme-green:  @syntax-color-added;
-@theme-orange: @syntax-color-modified;
-@theme-red:    @syntax-color-removed;
+@text-color-info:      @ui-blue;
+@text-color-success:   @ui-green;
+@text-color-warning:   @ui-orange;
+@text-color-error:     @ui-red;
 
-// Editor colors ---------------------------------------------------------------
-@theme-syntax-text-color:            @syntax-text-color;
-@theme-syntax-cursor-color:          @syntax-text-color;
-@theme-syntax-selection-color:       lighten(@syntax-background-color, 10%);
-@theme-syntax-background-color:      @syntax-background-color;
-
-@theme-syntax-wrap-guide-color:          @theme-background-color-light;
-@theme-syntax-indent-guide-color:        @theme-background-color-light;
-@theme-syntax-invisible-character-color: @theme-background-color-light;
-
-@theme-syntax-gutter-text-color:                @theme-text-color-subtle;
-@theme-syntax-gutter-text-color-selected:       @theme-text-color-highlight;
-@theme-syntax-gutter-background-color:          @theme-background-color;
-@theme-syntax-gutter-background-color-selected: fade(@theme-background-color-light, 10%);
-
-// Main colors -----------------------------------------------------------------
-@base-background-color: @theme-background-color;
-@base-border-color:     @theme-background-color-light;
+@text-color-ignored:   @ui-text-color-subtle;
+@text-color-added:     @ui-green;
+@text-color-renamed:   @ui-orange;
+@text-color-modified:  @ui-blue;
+@text-color-removed:   @ui-red;
 
 // Background colors -----------------------------------------------------------
-@background-color-highlight: @theme-background-color-light;
-@background-color-selected:  @theme-background-color-light;
 
-@background-color-info:    @theme-blue;
-@background-color-success: @theme-green;
-@background-color-warning: @theme-orange;
-@background-color-error:   @theme-red;
+@base-background-color:      @ui-background-level-2;
+@base-border-color:          @ui-background-level-3;
 
-// Text colors -----------------------------------------------------------------
-@text-color:           @theme-text-color-normal;
-@text-color-subtle:    @theme-text-color-subtle;
-@text-color-highlight: @theme-text-color-highlight;
-@text-color-selected:  @theme-text-color-highlight;
+@background-color-info:      @ui-blue;
+@background-color-success:   @ui-green;
+@background-color-warning:   @ui-orange;
+@background-color-error:     @ui-red;
+@background-color-highlight: @ui-background-level-3;
+@background-color-selected:  @ui-background-level-3;
 
-@text-color-info:    @theme-blue;
-@text-color-success: @theme-green;
-@text-color-warning: @theme-orange;
-@text-color-error:   @theme-red;
-
-@text-color-ignored:   @text-color-subtle;
-@text-color-added:     @text-color-success;
-@text-color-renamed:   @text-color-info;
-@text-color-modified:  @text-color-warning;
-@text-color-removed:   @text-color-error;
-
-// Site colors -----------------------------------------------------------------
-@ui-site-color-1: @theme-blue; // blue
-@ui-site-color-2: @theme-green; // green
-@ui-site-color-3: @theme-orange; // orange
-@ui-site-color-4: @theme-red;             // pink
-@ui-site-color-5: @theme-blue;            // yellow
-
-// Editor ----------------------------------------------------------------------
-@indent-guide-color: @theme-background-color-dark;
-@invisibles-color:   @theme-background-color-light;
-
-@gutter-background-color:          transparent;
-@gutter-background-color-selected: transparent;
-@gutter-text-color:                @text-color-subtle;
-@gutter-text-color-selected:       @text-color-selected;
+@app-background-color:       @ui-background-level-1;
 
 // Component colors ------------------------------------------------------------
-@app-background-color: @theme-background-color;
 
-@pane-item-background-color: @theme-background-color-light;
-@pane-item-border-color: @base-border-color;
+@pane-item-background-color: @base-background-color;
+@pane-item-border-color:     @base-border-color;
 
-@input-background-color: @theme-background-color-light;
-@input-border-color: @text-color;
-@input-background-color-active: @text-color;
-@input-text-color-active: @base-background-color;
+@input-background-color: @ui-background-level-4;
+@input-border-color: @ui-background-level-4;
 
-@tool-panel-background-color: @theme-background-color-dark;
+@tool-panel-background-color: transparent;
 @tool-panel-border-color: @base-border-color;
 
-@inset-panel-background-color: @theme-background-color-light;
+@inset-panel-background-color: @ui-background-level-3;
 @inset-panel-border-color: @base-border-color;
 
-@panel-heading-background-color: @theme-background-color-light;
-@panel-heading-border-color:     @base-border-color;
+@panel-heading-background-color: @ui-background-level-3;
+@panel-heading-border-color: @base-border-color;
 
-@overlay-background-color: @tool-panel-background-color;
-@overlay-border-color:     @base-border-color;
+@overlay-background-color: @ui-background-level-4;
+@overlay-border-color: @base-border-color;
 
-@button-background-color:          transparent;
-@button-background-color-hover:    @input-border-color;
-@button-background-color-selected: @input-border-color;
-@button-border-color:              @input-border-color;
+@button-background-color: transparent;
+@button-background-color-hover: @ui-background-level-4;
+@button-background-color-selected: @ui-background-level-4;
+@button-border-color: @ui-background-level-4;
 
-@tab-bar-background-color:    @app-background-color;
-@tab-bar-border-color:        @base-border-color;
-@tab-background-color:        @tool-panel-background-color;
-@tab-background-color-active: @app-background-color;
-@tab-background-color-hover:  @base-border-color;
-@tab-border-color:            @base-border-color;
+@tab-bar-background-color: @ui-background-level-1;
+@tab-bar-border-color: @base-border-color;
+@tab-background-color: @ui-background-level-1;
+@tab-background-color-active: @ui-background-level-2;
+@tab-border-color: @base-border-color;
 
-@tooltip-text-color: @base-background-color;
-@tooltip-background-color: @text-color;
-@tooltip-key-text-color: @background-color-info; //@base-background-color;
-@tooltip-key-background-color: @base-background-color; //@background-color-info;
-
-@tree-view-background-color: @tool-panel-background-color;
+@tree-view-background-color: @ui-background-level-1;
 @tree-view-border-color: @base-border-color;
 
-@progress-background-color: @background-color-info;
+@scrollbar-background-color: @ui-background-level-1;
+@scrollbar-color: @ui-background-level-3;
 
-@markdown-preview-color: @syntax-text-color;
-@markdown-preview-background-color: @syntax-background-color;
-@markdown-preview-border-color: mix(@syntax-text-color, @syntax-background-color, 20%);
+//
 
-@scrollbar-color: @theme-background-color-light;
-@scrollbar-color-active: @theme-background-color-light;
-@scrollbar-border-color: @theme-background-color-dark;
-@scrollbar-track-color: transparent;
+@ui-site-color-1: @ui-green; // green
+@ui-site-color-2: @ui-blue; // blue
+@ui-site-color-3: @ui-orange; // orange
+@ui-site-color-4: mix(@ui-blue, @ui-red, 50%); // purple
+@ui-site-color-5: mix(@ui-green, @ui-red, 50%); // yellow
 
-// Site colors  ----------------------------------------------------------------
-@ui-site-color-1: @theme-green;
-@ui-site-color-2: @theme-blue;
-@ui-site-color-3: @theme-orange;
-@ui-site-color-4: @theme-red;
-@ui-site-color-5: @theme-blue;
 
 // Sizes -----------------------------------------------------------------------
-@font-size: 1.0rem;
 
-@input-font-size: 1.0rem;
-@input-height: 32px;
+@font-size: 13px;
+@input-font-size: 13px;
+
+@disclosure-arrow-size: 12px;
 
 @component-padding: 10px;
 @component-icon-padding: 5px;
 @component-icon-size: 16px;
-@component-line-height: 26px;
+@component-line-height: 2rem;
 @component-border-radius: 4px;
 
-@disclosure-arrow-size: 12px;
-
-@tab-height: 40px;
+@tab-height: 32px;
 
 // Other -----------------------------------------------------------------------
-@font-family: '.SFNSText-Regular', 'SF UI Text', 'Helvetica Neue', 'Arial', 'Lucida Grande', 'Segoe UI', Noto Sans, sans-serif;
-@font-family-bold: '.SFNSText-Bold', 'SF UI Text', 'Helvetica Neue', 'Arial', 'Lucida Grande', 'Segoe UI', Noto Sans, sans-serif;
-@font-family-light: '.SFNSText-Light', 'SF UI Text', 'Helvetica Neue', 'Arial', 'Lucida Grande', 'Segoe UI', Noto Sans, sans-serif;
 
-@transition-time: 400ms;
+@font-family: 'BlinkMacSystemFont', 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif;

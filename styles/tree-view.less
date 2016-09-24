@@ -1,18 +1,27 @@
-@import "ui-variables.less";
-@import "ui-mixins.less";
-@import "octicon-mixins";
+.tree-view-resizer > .tree-view-scroller:not(:first-child) {
+  padding-top: @component-padding;
+  border-top: 1px solid @base-border-color;
+}
 
 .tree-view {
-  font-size: @font-size;
+  font-size: @ui-size;
   background: @tree-view-background-color;
-  padding-top: 0;
 
-  .project-root {
-    padding-top: @component-padding;
+  .directory > .header:hover {
+    .text(highlight);
+  }
+
+  .directory::before {
+    background: transparent;
+  }
+
+  .project-root.project-root {
+    &::before {
+      background: transparent;
+    }
     padding-bottom: @component-padding;
-
-    &:first-child {
-      padding-top: 0;
+    &:not(:first-child) {
+      padding-top: @component-padding;
     }
 
     &:before {
@@ -21,66 +30,22 @@
     }
 
     & > .header {
-      & .name {
-        .text(bold);
-        color: @text-color-highlight;
-        height: @tab-height + 1px;
+      &::before {
+        .transition(opacity);
+        opacity: 0;
+      }
+
+      &:hover::before {
+        opacity: 1;
+      }
+
+      .name {
+        .text(highlight);
+        font-weight: bold;
         line-height: @tab-height;
 
         &:before {
           display: none;
-        }
-      }
-
-      &:before {
-        color: @theme-text-color-highlight;
-        transition: all @transition-time ease;
-        opacity: 0;
-      }
-
-      &:hover {
-        &:before {
-          opacity: 1;
-        }
-      }
-    }
-  }
-
-  .project-root.project-root.collapsed {
-    & > .header {
-      &:before {
-        opacity: 0;
-      }
-
-      &:hover {
-        &:before {
-          opacity: 1;
-        }
-      }
-    }
-  }
-
-  .directory.selected:before {
-    background: transparent !important;
-  }
-}
-
-.tree-view-resizer {
-  .tree-view-resize-handle {
-    width: 8px;
-  }
-}
-@media (max-width: 1280px), (max-height: 800px) {
-  .tree-view {
-    .project-root.project-root {
-      &:before {
-        height: @tab-height * 0.8;
-      }
-
-      & > .header {
-        & .name {
-          height: @tab-height * 0.8 + 1px;
-          line-height: @tab-height * 0.8;
         }
       }
     }

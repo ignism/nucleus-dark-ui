@@ -1,83 +1,18 @@
-@import "ui-variables.less";
-@import "ui-mixins.less";
-@import "octicon-mixins";
+atom-panel-container {
+  &.bottom {
+    z-index: +1000;
+  }
+}
 
 atom-panel {
-  .text(normal);
-  background: @tool-panel-background-color;
-
   &.bottom {
-    background: @app-background-color;
-  }
-  &.bottom > *:not(:empty) {
-    background: @app-background-color;
-    padding-top: @component-padding/2;
-    z-index: 3;
-  }
-}
-
-atom-panel-container {
-  &.bottom {
-    margin-top: 2px;
     border-top: 1px solid @tool-panel-border-color;
-    z-index: 3;
+    background: @base-background-color;
   }
 }
 
-atom-pane-container atom-pane .item-views,
-.pane-item {
-  background: @app-background-color !important;
-  border: 0;
-}
-
-atom-panel-container {
-    background: @theme-background-color-dark;
-}
-
-.focusable-panel,
-.item-views .focusable-panel {
-  padding: @component-padding;
-}
-
-.inset-panel .panel-heading,
-.panel-heading {
-  .text(heading);
-  font-size: 0.9rem;
-  border-radius: 0;
-
-  & .btn {
-    .button(@button-border-color);
-
-    &.btn-primary {
-      .button-variant(@text-color-info);
-    }
-
-    &.btn-info {
-      .button-variant(@text-color-info);
-    }
-
-    &.btn-success {
-      .button-variant(@text-color-success);
-    }
-
-    &.btn-warning {
-      .button-variant(@text-color-warning);
-    }
-
-    &.btn-error {
-      .button-variant(@text-color-error);
-    }
-
-    font-size: 0.785rem !important;
-    padding: 0 8px !important;
-    height: 24px !important;
-    line-height: 24px !important;
-  }
-}
-
-.panel-body {
-  background: @tool-panel-background-color;
-  border-radius: @component-border-radius;
+atom-pane-container {
+  background: linear-gradient(@app-background-color, @base-background-color);
 }
 
 atom-pane-container atom-pane-axis.horizontal > *:last-child {
@@ -89,6 +24,19 @@ atom-pane-container atom-pane-axis.horizontal > * {
 }
 
 atom-pane-container atom-pane-axis.vertical > atom-pane-resize-handle.vertical {
-  border-bottom: 1px solid @base-border-color;
-  margin-bottom: -1px;
+  border-top: 1px solid @base-border-color;
+  margin-top: 0;
+}
+
+.inset-panel {
+  .panel-heading {
+    .text(heading);
+  }
+}
+
+.tool-panel {
+  .panel-body,
+  .panel-heading {
+    background: transparent;
+  }
 }

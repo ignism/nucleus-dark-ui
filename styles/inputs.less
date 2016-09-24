@@ -1,0 +1,70 @@
+@input-padding: 0 @ui-size/1.25;
+@input-height: @ui-size*2.5;
+
+
+.input-radio,
+.input-checkbox,
+.input-toggle,
+.input-range {
+  .transition(background);
+  background: @base-border-color;
+  &:checked {
+    background: @background-color-info;
+  }
+  &:hover {
+    background: @input-background-color;
+  }
+}
+
+.input-text,
+.input-search,
+.input-textarea {
+  .transition(background);
+  border: 0;
+  background: @base-border-color;
+
+  .cursor {
+    border-color: @ui-text-color-accent;
+    border-width: 1px;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    background: @input-background-color;
+    color: @text-color-highlight;
+  }
+}
+
+atom-text-editor.mini,
+atom-text-editor.mini::shadow {
+  .transition();
+  background: @base-border-color;
+  border-radius: @component-border-radius;
+  height: @input-height;
+  line-height: @input-height;
+  padding: @input-padding;
+  font-size: @ui-size;
+  font-family: @font-family;
+
+  .cursor {
+    border-color: @text-color-highlight;
+    border-width: 2px;
+  }
+
+  .text,
+  .regexp {
+    .text(normal);
+  }
+}
+
+atom-text-editor.mini.is-focused,
+atom-text-editor.mini.is-focused::shadow,
+atom-text-editor.mini:hover,
+atom-text-editor.mini:hover::shadow{
+  background: @input-background-color;
+  .text,
+  .regexp {
+    .text(invert);
+  }
+}

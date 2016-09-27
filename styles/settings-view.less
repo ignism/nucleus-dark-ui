@@ -1,26 +1,66 @@
 .settings-view {
-  font-size: @font-size;
+  .text(normal);
+
+  input[type="checkbox"] {
+    .transition(background);
+    background: @base-border-color;
+    &:checked {
+      background: @background-color-info;
+    }
+    &:hover {
+      background: @input-background-color;
+    }
+  }
+
+  .settings-panel .control-group + .control-group {
+    margin-top: 2em;
+  }
 
   .breadcrumb {
     .text(subtle);
   }
 
-  .section .section-heading {
-    .text(heading);
-  }
-
+  .section .section-heading,
   .sub-section .sub-section-heading {
-    .text(normal);
-    .text(light);
+    .text(heading);
   }
 
   .config-menu {
     background: transparent;
   }
 
+  .setting-title {
+    .text(normal);
+  }
+
+  .setting-description {
+    .text(normal);
+    .text(subtle);
+  }
+
+  .packages .themes-label {
+    .text(normal);
+  }
+
   .package-card {
-    border: none;
+    border: 0;
+    border-radius: 0;
     padding: @component-padding 0;
+    margin-bottom: 2em;
+
+    .package-name {
+      .text(normal);
+      .text(highlight);
+    }
+
+    .package-description {
+      .text(normal);
+    }
+    .package-version, .stats-item, .meta-user {
+      .text(normal);
+      .text(subtle);
+    }
+
     .meta-controls .status-indicator {
       width: @component-padding/2;
       &:before {

@@ -88,6 +88,7 @@
       right: 8px;
       display: inline-block;
       border-width: 1px;
+      border-color: @text-color-modified;
     }
 
     &.modified {
@@ -97,10 +98,10 @@
     }
 
     &.modified .close-icon:hover {
-      background: @background-color-info;
+      background: @text-color-modified;
 
       &::before {
-        color: @text-color-highlight;
+        .text(invert);
       }
     }
   }

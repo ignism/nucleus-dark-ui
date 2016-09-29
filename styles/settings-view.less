@@ -1,3 +1,5 @@
+
+
 .settings-view {
   .text(normal);
 
@@ -19,6 +21,24 @@
   .breadcrumb {
     .text(subtle);
   }
+
+  .alert-type(@color) {
+    color: @color;
+    border: 0;
+    background-color: transparent;
+    padding: 1em 0;
+
+    .alert-link {
+      color: inherit;
+      text-decoration: underline;
+    }
+  }
+
+  .alert-info     { .alert-type(@text-color-info);    }
+  .alert-success  { .alert-type(@text-color-success); }
+  .alert-warning  { .alert-type(@text-color-warning); }
+  .alert-error,
+  .alert-danger   { .alert-type(@text-color-error);   }
 
   .section .section-heading,
   .sub-section .sub-section-heading {

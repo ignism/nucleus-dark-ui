@@ -1,3 +1,82 @@
+//Git control ------------------------------------------------------------------
+@input-padding: 0 @ui-size/1.25;
+@input-height: @ui-size*2.5;
+
+.git-control .dialog input,
+.git-control .dialog textarea {
+  .transition(background);
+  border: 0;
+  background: @base-border-color;
+  color: @base-background-color;
+  padding: @ui-size/1.25;
+
+  .cursor {
+    border-color: @ui-text-color-accent;
+    border-width: 1px;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    background: @base-background-color;
+    color: @text-color-highlight;
+  }
+}
+
+.git-control .dialog input {
+  height: @input-height;
+  padding: @input-padding;
+}
+.git-control .dialog select {
+  height: @input-height;
+  .transition(background);
+  border: 1px solid @base-background-color;
+  background: transparent;
+  color: @base-background-color;
+  -webkit-appearance: menulist-button;
+
+  .cursor {
+    border-color: @ui-text-color-accent;
+    border-width: 1px;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    background: @base-background-color;
+    color: @text-color-highlight;
+  }
+}
+
+.git-control .dialog {
+  .shadow();
+  .text(invert);
+  background: @overlay-background-color;
+  border: 0;
+  border-radius: @component-border-radius;
+  padding: @component-padding;
+  opacity: 1;
+
+  .heading strong {
+    .text(invert);
+  }
+  button {
+    .transition(color);
+    color: @base-background-color;
+    .icon::before {
+      .transition(color);
+      color: @base-background-color;
+    }
+    &:hover {
+      color: @text-color-highlight;
+      .icon::before {
+        color: @text-color-highlight;
+      }
+    }
+  }
+}
+
+
 // Tool-bar --------------------------------------------------------------------
 .tool-bar {
   background-color: @tool-panel-background-color;

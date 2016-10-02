@@ -17,35 +17,46 @@ atom-panel.modal {
     top: 20%;
     border-top-right-radius: @component-border-radius;
     border-top-left-radius: @component-border-radius;
+
+    * {
+      padding: 0;
+    }
   }
 
   & > * > *:not(.list-group) {
     margin: @component-padding;
   }
 
-  .select-list {
-    .list-group,
-    .list-tree {
-      border-top: 1px solid @overlay-border-color;
+  .list-group,
+  .list-tree {
+    border-top: 1px solid @overlay-border-color;
 
-      li.list-nested-item > .list-item,
-      li:not(.list-nested-item) {
-        padding: 0.5em 1em;
+    li.list-nested-item > .list-item,
+    li:not(.list-nested-item) {
+      padding: 0.5em 1em;
+      .text(invert);
+
+      .character-match {
+        .transition(color);
+        font-weight: normal;
+      }
+    }
+
+    li.selected {
+      .text(selected);
+    }
+
+    li:not(.selected) {
+      .character-match {
         .text(invert);
       }
-
-      li.selected {
-        .text(selected);
+      .secondary-line .character-match {
+        color: @text-color-subtle;
       }
-    }
-  }
-
-  .list-group li:not(.selected) {
-    .character-match {
-      .text(invert);
-    }
-    .secondary-line .character-match {
-      color: @text-color-subtle;
+      &:hover {
+        color: @text-color-highlight;
+        background: transparent;
+      }
     }
   }
 
@@ -79,7 +90,7 @@ atom-panel.modal {
     background: @scrollbar-color;
   }
 }
-s
+
 .select-list.popover-list,
 .autocomplete-suggestion-list.select-list.popover-list  {
   .shadow();

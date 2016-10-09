@@ -1,8 +1,8 @@
 # Nucleus Dark UI
 
-Nucleus is an adaptable UI theme for Atom with your favorite syntax coloring at its core! This gives the UI a coherent feel, with whatever syntax theme you like to use.
+Nucleus is an adaptable UI theme for Atom with your favorite syntax coloring at its core! This gives the UI a coherent feel, with whatever syntax theme you like to use. I used [Behave](https://atom.io/themes/behave-theme) in the screenshot below.
 
-![Atom Dark Fusion](http://i.imgur.com/u8btyfR.png)
+![Screenshot](http://i.imgur.com/j7Vrom5.png)
 
 #### Installation
 Inside atom go to settings, select Install and search for Nucleus.
@@ -15,4 +15,4 @@ Or install directly from the console:
 Every color used in the UI is taken directly from a (dark) syntax theme. In order for this to work, the syntax theme needs to have a `syntax-variables.less`. A light version of this theme is still being worked on.
 
 #### Support
-[Buy me a coffee to keep me going](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YW2GB7ABTVCVA)
+[Buy me a coffee to keep me going](https://www.paypal.me/ignism)

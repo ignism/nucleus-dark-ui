@@ -2,55 +2,8 @@
 @input-padding: 0 @ui-size/1.25;
 @input-height: @ui-size*2.5;
 
-.git-control .dialog input,
-.git-control .dialog textarea {
-  .transition(background);
-  border: 0;
-  background: @base-border-color;
-  color: @base-background-color;
-  padding: @ui-size/1.25;
-
-  .cursor {
-    border-color: @ui-text-color-accent;
-    border-width: 1px;
-  }
-
-  &:hover,
-  &:active,
-  &:focus {
-    background: @base-background-color;
-    color: @text-color-highlight;
-  }
-}
-
-.git-control .dialog input {
-  height: @input-height;
-  padding: @input-padding;
-}
-.git-control .dialog select {
-  height: @input-height;
-  .transition(background);
-  border: 1px solid @base-background-color;
-  background: transparent;
-  color: @base-background-color;
-  -webkit-appearance: menulist-button;
-
-  .cursor {
-    border-color: @ui-text-color-accent;
-    border-width: 1px;
-  }
-
-  &:hover,
-  &:active,
-  &:focus {
-    background: @base-background-color;
-    color: @text-color-highlight;
-  }
-}
-
 .git-control .dialog {
   .shadow();
-  .text(invert);
   background: @overlay-background-color;
   border: 0;
   border-radius: @component-border-radius;
@@ -58,20 +11,62 @@
   opacity: 1;
 
   .heading strong {
-    .text(invert);
+    .text(normal);
+    .text(bold);
   }
+
   button {
     .transition(color);
-    color: @base-background-color;
     .icon::before {
       .transition(color);
-      color: @base-background-color;
     }
     &:hover {
       color: @text-color-highlight;
       .icon::before {
         color: @text-color-highlight;
       }
+    }
+  }
+
+  input {
+    height: @input-height;
+    padding: @input-padding;
+  }
+
+  input,
+  textarea {
+    .transition(background);
+    .text(normal);
+    border: 0;
+    background: @base-border-color;
+    padding: @ui-size/1.25;
+
+    .cursor {
+      border-color: @ui-text-color-accent;
+      border-width: 1px;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      .text(highlight);
+      background: @input-background-color;
+    }
+  }
+
+  select {
+    .transition(background);
+    .text(normal);
+    height: @input-height;
+    border: 1px solid @input-background-color;
+    background: transparent;
+    -webkit-appearance: menulist-button;
+
+    &:hover,
+    &:active,
+    &:focus {
+      .text(invert);
+      background: @input-background-color;
     }
   }
 }

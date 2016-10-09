@@ -55,6 +55,7 @@
 
   li.selected::before {
     background: @background-color-selected;
+
   }
 }
 
@@ -62,10 +63,10 @@
 &.select-list ol.list-group {
   li.two-lines {
     .secondary-line {
-      color: @text-color-subtle;
+      .text(invert);
     }
     &.selected .secondary-line {
-      color: @text-color-highlight;
+      .text(highlight);
     }
   }
 
@@ -110,10 +111,7 @@
 .select-list.popover-list,
 .autocomplete-suggestion-list.select-list.popover-list  {
   .shadow();
-  .text(invert);
-
   .character-match {
-    .text(invert);
   }
 
   .suggestion-description {
@@ -136,7 +134,6 @@
   }
 
   .list-group li {
-    .text(invert);
     padding-left: @component-padding/2;
     .transition(color);
   }

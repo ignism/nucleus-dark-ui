@@ -1,7 +1,6 @@
 .overlay,
 atom-panel.modal {
   .shadow();
-  .text(invert);
   border-radius: @component-border-radius;
   border: 0;
   padding: 0;
@@ -34,7 +33,6 @@ atom-panel.modal {
     li.list-nested-item > .list-item,
     li:not(.list-nested-item) {
       padding: 0.5em 1em;
-      .text(invert);
 
       .character-match {
         .transition(color);
@@ -48,7 +46,7 @@ atom-panel.modal {
 
     li:not(.selected) {
       .character-match {
-        .text(invert);
+        .text(normal);
       }
       .secondary-line .character-match {
         color: @text-color-subtle;
@@ -69,7 +67,6 @@ atom-panel.modal {
     padding: 0;
 
     .text {
-      .text(invert);
       font-size: @ui-size * 2;
       height: 1.3em;
       line-height: 1.3em;
@@ -94,9 +91,13 @@ atom-panel.modal {
 .select-list.popover-list,
 .autocomplete-suggestion-list.select-list.popover-list  {
   .shadow();
-  .text(invert);
+  .text(normal);
 
   .character-match {
+    .text(normal);
+  }
+
+  .right-label {
     .text(invert);
   }
 
@@ -113,9 +114,12 @@ atom-panel.modal {
   }
 
   .list-group li {
-    .text(invert);
     padding-left: @component-padding/2;
     .transition(color);
+
+    &.selected .word {
+      .text(highlight);
+    }
   }
 
   /deep/::-webkit-scrollbar-track {

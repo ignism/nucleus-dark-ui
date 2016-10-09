@@ -5,10 +5,12 @@
 @ui-text-color-normal:    mix(@syntax-background-color, @ui-text-color-accent, 32%);
 @ui-text-color-subtle:    mix(@syntax-background-color, @ui-text-color-accent, 72%);
 
-@ui-background-level-1:  desaturate(darken(@syntax-background-color, 4%), 2%);
-@ui-background-level-2:       @syntax-background-color;
-@ui-background-level-3: fade(desaturate(lighten(@syntax-background-color, 16%), 2%), 50%);
-@ui-background-level-4: @ui-text-color-normal;
+@ui-background-level-1: desaturate(darken(@syntax-background-color, 4%), 2%);
+@ui-background-level-2: @syntax-background-color;
+@ui-background-level-3: desaturate(lighten(@syntax-background-color, 16%), 2%);
+
+@ui-background-highlight: lighten(@syntax-background-color, 8%);
+@ui-background-accent: @ui-text-color-normal;
 
 @ui-blue:   @syntax-color-renamed;
 @ui-green:  @syntax-color-added;

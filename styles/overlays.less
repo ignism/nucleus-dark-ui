@@ -23,7 +23,7 @@ atom-panel.modal {
   }
 
   & > * > *:not(.list-group) {
-    margin: @component-padding;
+    margin: @component-padding @component-padding*2;
   }
 
   .list-group,
@@ -32,7 +32,7 @@ atom-panel.modal {
 
     li.list-nested-item > .list-item,
     li:not(.list-nested-item) {
-      padding: 0.5em 1em;
+      padding: 0.5em @component-padding*2;
 
       .character-match {
         .transition(color);
@@ -42,6 +42,7 @@ atom-panel.modal {
 
     li.selected {
       .text(selected);
+      background: @background-color-selected;
     }
 
     li:not(.selected) {

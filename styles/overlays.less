@@ -6,6 +6,7 @@ atom-panel.modal {
   padding: 0;
   width: 680px;
   margin-left: -340px;
+  overflow: hidden;
   @media (max-width: 768px) {
     width: 88%;
     left: 50%;
@@ -17,7 +18,7 @@ atom-panel.modal {
     border-top-right-radius: @component-border-radius;
     border-top-left-radius: @component-border-radius;
 
-    * {
+    & > * {
       padding: 0;
     }
   }
@@ -50,7 +51,7 @@ atom-panel.modal {
         .text(normal);
       }
       .secondary-line .character-match {
-        color: @text-color-subtle;
+        .text(invert);
       }
       &:hover {
         color: @text-color-highlight;

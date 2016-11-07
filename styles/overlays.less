@@ -95,16 +95,6 @@ atom-panel.modal {
   .shadow();
   .text(normal);
 
-  .character-match {
-    .text(normal);
-  }
-
-  .left-label,
-  .right-label {
-    .text(invert);
-    .text(bold);
-  }
-
   .suggestion-description {
     background: @overlay-border-color;
   }
@@ -121,8 +111,32 @@ atom-panel.modal {
     padding-left: @component-padding/2;
     .transition(color);
 
-    &.selected .word {
-      .text(highlight);
+    .character-match {
+      .text(normal);
+    }
+
+    .left-label,
+    .right-label {
+      .text(bold);
+      .text(invert);
+    }
+
+    .word .snippet-completion,
+    .word .snippet-completion .character-match {
+      .text(normal);
+      .text(invert);
+    }
+
+    &.selected {
+
+      .word {
+        .text(highlight);
+
+        .snippet-completion,
+        .snippet-completion .character-match {
+          .text(normal);
+        }
+      }
     }
   }
 

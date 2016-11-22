@@ -37,7 +37,7 @@
 }
 
 atom-text-editor.mini,
-atom-text-editor.mini::shadow {
+atom-text-editor.mini.editor {
   .transition();
   background: @base-border-color;
   border-radius: @component-border-radius;
@@ -59,9 +59,9 @@ atom-text-editor.mini::shadow {
 }
 
 atom-text-editor.mini.is-focused,
-atom-text-editor.mini.is-focused::shadow,
+atom-text-editor.mini.is-focused.editor,
 atom-text-editor.mini:hover,
-atom-text-editor.mini:hover::shadow{
+atom-text-editor.mini:hover.editor {
   background: @input-background-color;
   .text,
   .regexp {

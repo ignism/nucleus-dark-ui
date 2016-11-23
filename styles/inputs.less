@@ -39,6 +39,7 @@
 atom-text-editor.mini,
 atom-text-editor.mini.editor {
   .transition();
+  .text(normal);
   background: @base-border-color;
   border-radius: @component-border-radius;
   height: @input-height;
@@ -51,20 +52,12 @@ atom-text-editor.mini.editor {
     border-color: @text-color-highlight;
     border-width: 2px;
   }
-
-  .text,
-  .regexp {
-    .text(normal);
-  }
 }
 
 atom-text-editor.mini.is-focused,
 atom-text-editor.mini.is-focused.editor,
 atom-text-editor.mini:hover,
 atom-text-editor.mini:hover.editor {
+  .text(highlight);
   background: @input-background-color;
-  .text,
-  .regexp {
-    .text(highlight);
-  }
 }

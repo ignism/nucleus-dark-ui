@@ -30,8 +30,8 @@ atom-panel.modal {
     margin: 0 @component-padding*2;
   }
 
-  .list-group:not(:first-child),
-  .list-tree:not(:first-child) {
+  .list-group:not(:first-child):not(:empty),
+  .list-tree:not(:first-child):not(:empty) {
     border-top: 1px solid @overlay-border-color;
   }
 

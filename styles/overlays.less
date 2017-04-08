@@ -1,12 +1,15 @@
+.modal {
+  .shadow();
+}
+
 .overlay,
 atom-panel.modal {
-  .shadow();
   border-radius: @component-border-radius;
   border: 0;
-  padding: 0;
+  padding: @component-padding 0;
   width: 680px;
   margin-left: -340px;
-  overflow: hidden;
+
   @media (max-width: 768px) {
     width: 88%;
     left: 50%;
@@ -24,13 +27,16 @@ atom-panel.modal {
   }
 
   & > * > *:not(.list-group) {
-    margin: @component-padding @component-padding*2;
+    margin: 0 @component-padding*2;
+  }
+
+  .list-group:not(:first-child),
+  .list-tree:not(:first-child) {
+    border-top: 1px solid @overlay-border-color;
   }
 
   .list-group,
   .list-tree {
-    border-top: 1px solid @overlay-border-color;
-
     li.list-nested-item > .list-item,
     li:not(.list-nested-item) {
       padding: 0.5em @component-padding*2;

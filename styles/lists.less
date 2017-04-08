@@ -1,74 +1,83 @@
 // Mixins ----------------------------------------------------------------------
 
 .generate-list-item-text-color(@class) {
-  li:not(.list-nested-item).text-@{class},
-  li.list-nested-item.text-@{class} > .list-item {
+  li.list-nested-item.text-@,
+  li:not(.list-nested-item).text-@{class} {
+    class
+  }
+
+  > .list-item {
     .text(@class);
   }
 }
 
 .generate-list-item-status-color(@color, @status) {
-  li:not(.list-nested-item).status-@{status},
-  li.list-nested-item.status-@{status} > .list-item {
+  li.list-nested-item.status-@,
+  li:not(.list-nested-item).status-@{status} {
+    status
+  }
+
+  > .list-item {
     color: @color;
   }
 
-  li:not(.list-nested-item).selected.status-@{status},
-  li.list-nested-item.selected.status-@{status} > .list-item {
+  li.list-nested-item.selected.status-@,
+  li:not(.list-nested-item).selected.status-@{status} {
+    status
+  }
+
+  > .list-item {
     color: @color;
   }
 }
-
 // Lists -----------------------------------------------------------------------
-
 .list-group,
 .list-tree {
-  li:not(.list-nested-item),
-  li.list-nested-item > .list-item {
+  li.list-nested-item > .list-item,
+  li:not(.list-nested-item) {
     .text(normal);
     .transition(color);
+    line-height: 2.2rem;
   }
-
   .generate-list-item-text-color(subtle);
   .generate-list-item-text-color(info);
   .generate-list-item-text-color(success);
   .generate-list-item-text-color(warning);
   .generate-list-item-text-color(error);
   .generate-list-item-text-color(selected);
-
   .generate-list-item-status-color(@text-color-added, added);
   .generate-list-item-status-color(@text-color-ignored, ignored);
   .generate-list-item-status-color(@text-color-modified, modified);
   .generate-list-item-status-color(@text-color-removed, removed);
   .generate-list-item-status-color(@text-color-renamed, renamed);
 
-  li:not(.list-nested-item).selected,
-  li.list-nested-item.selected > .list-item {
+  li.list-nested-item.selected > .list-item,
+  li:not(.list-nested-item).selected {
     .text(selected);
   }
+
   li:hover {
     .text(highlight);
   }
 
   li.selected::before {
     background: @background-color-selected;
-
   }
 }
 
-.select-list ol.list-group,
-&.select-list ol.list-group {
+ &.select-list ol.list-group,
+.select-list ol.list-group {
   margin: 0 !important; // TODO: remove !important
 
   li.two-lines {
     .secondary-line {
       .text(invert);
     }
+
     &.selected .secondary-line {
       .text(highlight);
     }
   }
-
   // We want to highlight the background of the list items because we dont
   // know their size.
   li.selected {
@@ -81,7 +90,6 @@
 
   &.mark-active {
     @active-icon-size: 14px;
-
     // pad in front of the text where the icon would be We'll pad the non-
     // active items with a 'fake' icon so other classes can pad the item
     // without worrying about the icon padding.
@@ -90,15 +98,19 @@
       background-color: transparent;
       position: static;
       display: inline-block;
-      left: auto; right: auto;
+      left: auto;
+      right: auto;
       height: @active-icon-size;
       width: @active-icon-size;
     }
+
     > li:not(.active):before {
       margin-right: @component-icon-padding;
     }
+
     li.active {
       .octicon(check, @active-icon-size);
+
       &:before {
         margin-right: @component-icon-padding;
         color: @text-color-success;
@@ -107,23 +119,20 @@
   }
 }
 
-.select-list.popover-list,
-.autocomplete-suggestion-list.select-list.popover-list  {
+.autocomplete-suggestion-list.select-list.popover-list,
+.select-list.popover-list {
   .shadow();
-  .character-match {
-  }
+
+  .character-match {}
 
   .suggestion-description {
     background: @overlay-border-color;
 
-    span,
-    a {
+    a,
+    span {
       font-size: 0.8rem;
     }
   }
-
-
-
   background-color: @overlay-background-color;
   border-radius: @component-border-radius;
   border: 0;

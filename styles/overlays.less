@@ -9,7 +9,6 @@ atom-panel.modal {
   padding: @component-padding 0;
   width: 680px;
   margin-left: -340px;
-
   @media (max-width: 768px) {
     width: 88%;
     left: 50%;
@@ -97,24 +96,36 @@ atom-panel.modal {
   }
 }
 
+autocomplete-suggestion-list .icon {
+  width: 2.2em;
+  height: 2.2em;
+}
+
 .autocomplete-suggestion-list.select-list.popover-list,
 .select-list.popover-list {
   .shadow();
   .text(normal);
+  background-color: @overlay-border-color;
+  border-radius: @component-border-radius;
+  border: 0;
+  line-height: 2em;
+
+  .suggestion-list-scroller {
+    border-radius: 4px;
+    background-color: @overlay-background-color;
+  }
 
   .suggestion-description {
     background: @overlay-border-color;
+    line-height: 1.65em;
   }
-
-  background-color: @overlay-background-color;
-  border-radius: @component-border-radius;
-  border: 0;
 
   atom-text-editor {
     margin-bottom: @component-padding/2;
   }
 
-  .list-group li {
+  ol.list-group li {
+    line-height: 2.2em;
     padding-left: @component-padding/2;
     .transition(color);
 

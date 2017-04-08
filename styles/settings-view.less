@@ -1,10 +1,12 @@
-
-
 .settings-view {
   .text(normal);
 
   .config-menu {
     background: transparent;
+
+    .panels-menu li a {
+      .transition();
+    }
 
     .button-area {
       .btn {
@@ -16,9 +18,11 @@
   input[type="checkbox"] {
     .transition(background);
     background: @base-border-color;
+
     &:checked {
       background: @background-color-info;
     }
+
     &:hover {
       background: @input-background-color;
     }
@@ -44,11 +48,22 @@
     }
   }
 
-  .alert-info     { .alert-type(@text-color-info);    }
-  .alert-success  { .alert-type(@text-color-success); }
-  .alert-warning  { .alert-type(@text-color-warning); }
-  .alert-error,
-  .alert-danger   { .alert-type(@text-color-error);   }
+  .alert-info {
+    .alert-type(@text-color-info);
+  }
+
+  .alert-success {
+    .alert-type(@text-color-success);
+  }
+
+  .alert-warning {
+    .alert-type(@text-color-warning);
+  }
+
+  .alert-danger,
+  .alert-error {
+    .alert-type(@text-color-error);
+  }
 
   .section .section-heading,
   .sub-section .sub-section-heading {
@@ -70,27 +85,77 @@
 
   .package-card {
     border: 0;
-    border-radius: 0;
-    padding: @component-padding 0;
-    margin-bottom: 2em;
+    border-radius: @component-border-radius;
+    padding: @component-padding;
+    margin-bottom: 3em;
+    .transition();
 
-    .package-name {
-      .text(normal);
-      .text(highlight);
+    &:hover {
+      background-color: @background-color-highlight;
+    }
+
+    .card-name {
+      margin-bottom: 4px;
+
+      .package-name {
+        .text(normal);
+        .text(highlight);
+      }
     }
 
     .package-description {
       .text(normal);
     }
-    .package-version, .stats-item, .meta-user {
+
+    .meta-user,
+    .package-version,
+    .stats-item {
       .text(normal);
       .text(subtle);
     }
 
-    .meta-controls .status-indicator {
-      width: @component-padding/2;
-      &:before {
-        content: "\00a0"; // fixes 0 height
+    .stats-item {
+      margin-right: 10px;
+    }
+
+    .meta {
+      margin-top: 4px;
+
+      .meta-controls {
+        .btn {
+          border: 0;
+          border-radius: @component-border-radius !important;
+
+          &:focus,
+          &:hover {
+            color: @text-color-highlight;
+            background: transparent;
+          }
+
+          &.icon-playback-pause {
+            color: @text-color-success;
+
+            &:focus,
+            &:hover {
+              color: @base-background-color;
+              background: @text-color-success;
+            }
+          }
+
+          &.icon-playback-play {
+            color: @text-color-warning;
+
+            &:focus,
+            &:hover {
+              color: @base-background-color;
+              background: @text-color-warning;
+            }
+          }
+        }
+
+        .status-indicator {
+          display: none;
+        }
       }
     }
   }

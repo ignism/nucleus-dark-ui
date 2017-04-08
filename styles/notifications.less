@@ -1,0 +1,84 @@
+atom-notifications {
+  atom-notification {
+    font-size: @font-size;
+
+    .item {
+      border-top: 0;
+    }
+
+    .close {
+      .transition();
+      opacity: 1;
+      width: @component-icon-size;
+      height: @component-icon-size;
+      line-height: @component-icon-size;
+      top: 12px;
+      right: 8px;
+      position: absolute;
+      border-radius: 2px;
+      &:before {
+        font-size: 12px;
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: 12px;
+        height: 12px;
+      }
+      &:hover {
+        background-color: @color-level-3;
+      }
+    }
+
+    @color-info-level-1:      @ui-blue;
+    @color-success-level-1:   @ui-green;
+    @color-warning-level-1:   @ui-orange;
+    @color-error-level-1:     @ui-red;
+    @color-fatal-level-1:     @ui-red;
+
+    .generate-notification-type(info);
+    .generate-notification-type(success);
+    .generate-notification-type(warning);
+    .generate-notification-type(error);
+    .generate-notification-type(fatal);
+  }
+}
+
+.generate-notification-type(@class) {
+  @color-level-1: "color-@{class}-level-1";
+  @color-level-2: mix(@ui-background-level-2, @@color-level-1, 64%);
+  @color-level-3: mix(@ui-background-level-2, @@color-level-1, 88%);
+
+  &.@{class} {
+    .close-all.btn {
+      font-size: 0.8rem;
+      top: 4px;
+      right: 24px;
+      border: 0;
+    }
+    a, .close-all.btn, .close {
+      color: @color-level-3;
+
+      &:hover {
+        color: @@color-level-1;
+      }
+    }
+    .close:hover {
+      background-color: @color-level-3;
+    }
+
+    &.icon:before {
+      color: @color-level-3;
+      background-color: @color-level-2;
+    }
+
+    .detail {
+      color: @@color-level-1;
+      background: @color-level-3;
+    }
+
+    .content {
+      color: @@color-level-1;
+      background-color: @color-level-2;
+    }
+  }
+}

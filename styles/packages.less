@@ -189,15 +189,50 @@
   }
 }
 // Linter ----------------------------------------------------------------------
-
-linter-bottom-tab {
-  .button(@button-border-color);
-
-  &.active {
-    color: @base-background-color;
-    background: @button-background-color-selected;
-  }
+.linter-status-count span {
+  border-radius: 0;
 }
+
+.linter-status-count span:first-child {
+  border-top-left-radius: @component-border-radius;
+  border-bottom-left-radius: @component-border-radius;
+}
+
+.linter-status-count span:last-child {
+  border-top-right-radius: @component-border-radius;
+  border-bottom-right-radius: @component-border-radius;
+}
+
+.sb-table.linter {
+  border: 0;
+  thead, tbody, tr, td, th {
+    border: 0;
+  }
+  tbody {
+    background: @base-background-color;
+  }
+}
+
+#linter-tooltip {
+  linter-message.info,
+  linter-message.info a,
+  linter-message.warning,
+  linter-message.warning a,
+  linter-message.error,
+  linter-message.error a {
+    color: @base-background-color;
+  }
+}
+
+linter-message:first-child {
+  border-top-left-radius: @component-border-radius;
+  border-top-right-radius: @component-border-radius;
+}
+linter-message:last-child {
+  border-bottom-left-radius: @component-border-radius;
+  border-bottom-right-radius: @component-border-radius;
+}
+
 
 // Deprecation Cop -------------------------------------------------------------
 .deprecation-cop,

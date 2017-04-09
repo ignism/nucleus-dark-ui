@@ -94,6 +94,12 @@
       background-color: @background-color-highlight;
     }
 
+    &.disabled {
+      .card-name .package-name {
+        color: @text-color-warning;
+      }
+    }
+
     .card-name {
       margin-bottom: 4px;
 
@@ -132,13 +138,13 @@
             background: transparent;
           }
 
-          &.icon-playback-pause {
-            color: @text-color-success;
+          &.icon-playback-pause, &.install-button {
+            color: @text-color-info;
 
             &:focus,
             &:hover {
               color: @base-background-color;
-              background: @text-color-success;
+              background: @text-color-info;
             }
           }
 

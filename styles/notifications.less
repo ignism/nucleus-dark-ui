@@ -1,13 +1,21 @@
 atom-notifications {
   atom-notification {
     font-size: @font-size;
-
+    &.has-close.message {
+      padding-right: 24px;
+    }
     .item {
       border-top: 0;
+      padding: 0;
+      margin: 12px;
     }
 
     .content {
       overflow: hidden;
+    }
+
+    .description {
+      font-size: 1rem;
     }
 
     .close {
@@ -31,7 +39,7 @@ atom-notifications {
       }
 
       &:hover {
-        background-color: @color-level-3;
+        background-color: @dark;
       }
     }
     @color-info-level-1: @ui-blue;
@@ -48,14 +56,14 @@ atom-notifications {
 }
 
 .generate-notification-type(@class) {
-  @color-level-1: "color-@{class}-level-1";
-  @color-level-2: mix(@ui-background-level-2, @@color-level-1, 64%);
-  @color-level-3: mix(@ui-background-level-2, @@color-level-1, 88%);
+  @color: "color-@{class}-level-1";
+  @bright: @@color;
+  @dark: mix(@ui-background-level-2, @@color, 88%);
 
   &.@{class} {
     .close-all.btn {
       font-size: 0.8rem;
-      top: 4px;
+      top: 3px;
       right: 24px;
       border: 0;
     }
@@ -63,35 +71,35 @@ atom-notifications {
     .close,
     .close-all.btn,
     a {
-      color: @color-level-3;
+      color: @bright;
 
       &:hover {
-        color: @@color-level-1;
+        color: @text-color-highlight;
       }
     }
 
     .close:hover {
-      background-color: @color-level-3;
+      background-color: @dark;
     }
 
     &.icon:before {
-      color: @color-level-3;
-      background-color: @color-level-2;
+      color: @dark;
+      background-color: @bright;
     }
 
     .detail {
-      color: @@color-level-1;
-      background: @color-level-3;
+      color: @bright;
+      background: @dark;
     }
 
     .content {
-      color: @@color-level-1;
-      background-color: @color-level-2;
+      color: @bright;
+      background-color: @dark;
     }
 
     code {
-      color: @@color-level-1;
-      background-color: @color-level-3;
+      color: @dark;
+      background-color: @bright;
     }
   }
 }

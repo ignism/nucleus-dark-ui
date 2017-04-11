@@ -213,14 +213,26 @@
   }
 }
 
+#linter-tooltip linter-message:last-child::before {
+    border: 8px solid;
+    z-index: -1;
+}
+
 #linter-tooltip {
+  linter-message,
   linter-message.info,
-  linter-message.info a,
   linter-message.warning,
-  linter-message.warning a,
-  linter-message.error,
-  linter-message.error a {
+  linter-message.error {
+    font-family: @font-family;
     color: @base-background-color;
+
+    a {
+      color: @base-background-color;
+    }
+    .badge {
+      color: @text-color-highlight;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
   }
 }
 

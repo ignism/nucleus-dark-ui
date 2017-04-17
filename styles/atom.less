@@ -1,6 +1,6 @@
 :root {
   font-size: @font-size;
-  //line-height: 1.65em; EDIT
+  line-height: 1.65em;
 }
 
 * {
@@ -15,14 +15,10 @@ atom-workspace {
 status-bar {
   .text(highlight);
   background: @base-border-color;
-  height: @tab-height;
+  height: 2.25rem;
   line-height: @component-line-height;
   font-size: 0.8rem;
   z-index: +1000;
-
-  & > .flexbox-repaint-hack {
-    padding-top: 6px;
-  }
 
   span {
     font-size: 0.8rem;

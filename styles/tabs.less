@@ -27,6 +27,9 @@
 
       .close-icon {
         opacity: 1;
+        &:before {
+          transform: scale(1);
+        }
       }
     }
 
@@ -69,7 +72,8 @@
       border-radius: 2px;
 
       &::before {
-        .transition(color);
+        .transition();
+        transform: scale(0);
         color: @text-color-highlight;
         font-size: 12px;
         position: absolute;

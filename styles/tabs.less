@@ -58,6 +58,7 @@
         color: @text-color-ignored;
       }
     }
+
     // Close Icon --------------------------------------------------------------
     .close-icon {
       .transition(background);
@@ -112,6 +113,28 @@
     }
   }
 }
+
+atom-dock {
+  .tab-bar {
+    .tab {
+      &.active,
+      &:hover.active {
+        color: @text-color-selected;
+        background: @tab-background-color;
+
+        &[data-type="TextEditor"],
+        &[data-type="SettingsView"],
+        &[data-type="AboutView"],
+        &[data-type="StyleguideView"],
+        &[data-type="TimecopView"],
+        &[data-type="MarkdownPreviewView"]{
+          background: @tab-background-color-active;
+        }
+      }
+    }
+  }
+}
+
 // MacOS -----------------------------------------------------------------------
 .platform-darwin {
   .tab-bar .tab {

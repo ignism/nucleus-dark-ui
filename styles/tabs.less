@@ -1,9 +1,8 @@
 .tab-bar {
-  background: @tab-bar-background-color;
-  width: 100%;
-  height: @tab-height;
-  display: table;
-  table-layout: fixed;
+   background: @tab-bar-background-color;
+   width: 100%;
+   height: @tab-height;
+  // -webkit-transform:scale(1);
 
   .tab {
     .transition();
@@ -12,14 +11,15 @@
     text-align: center;
     color: @text-color-subtle;
     background: @tab-background-color;
-    display: table-cell;
     width: 100%;
+    max-width: 100%;
     height: @tab-height;
     line-height: @tab-height;
     box-sizing: border-box;
     border: 0;
     padding-left: 20px;
     padding-right: 20px;
+    flex: 1;
 
     &:hover {
       color: @text-color-highlight;
@@ -35,6 +35,8 @@
       color: @text-color-selected;
       background: @tab-background-color-active;
       width: 100%;
+      max-width: 100%;
+      flex: 1;
 
       .title {
         color: @text-color-selected;

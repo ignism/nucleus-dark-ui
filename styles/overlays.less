@@ -100,8 +100,8 @@ atom-panel.modal {
 }
 
 autocomplete-suggestion-list .icon {
-  width: 2.2em;
-  height: 2.2em;
+  width: 2.25rem;
+  height: 2.25rem;
 }
 
 .autocomplete-suggestion-list.select-list.popover-list,
@@ -111,7 +111,7 @@ autocomplete-suggestion-list .icon {
   background-color: @overlay-border-color;
   border-radius: @component-border-radius;
   border: 0;
-  line-height: 2em;
+  line-height: 2.25rem;
 
   .suggestion-list-scroller {
     border-radius: 4px;
@@ -120,7 +120,6 @@ autocomplete-suggestion-list .icon {
 
   .suggestion-description {
     background: @overlay-border-color;
-    line-height: 1.65em;
   }
 
   atom-text-editor {
@@ -128,7 +127,7 @@ autocomplete-suggestion-list .icon {
   }
 
   ol.list-group li {
-    line-height: 2.2em;
+    line-height: 2.25rem;
     padding-left: @component-padding/2;
     .transition(color);
 
@@ -160,16 +159,7 @@ autocomplete-suggestion-list .icon {
     }
   }
 
-  /deep/::-webkit-scrollbar-track {
-    background: @overlay-background-color;
-  }
-
-  /deep/::-webkit-scrollbar-corner {
-    background: @overlay-background-color;
-  }
-
-  /deep/::-webkit-scrollbar-thumb {
-    border-color: @overlay-background-color;
-    background: @scrollbar-color;
+  /deep/::-webkit-scrollbar {
+    display: none;
   }
 }

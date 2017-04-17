@@ -190,41 +190,36 @@
 }
 // Linter ----------------------------------------------------------------------
 .linter-status-count span {
-  border-radius: 0;
+  border-radius: 0;
 }
 
 .linter-status-count span:first-child {
-  border-top-left-radius: @component-border-radius;
-  border-bottom-left-radius: @component-border-radius;
+  border-top-left-radius: @component-border-radius;
+  border-bottom-left-radius: @component-border-radius;
 }
 
 .linter-status-count span:last-child {
-  border-top-right-radius: @component-border-radius;
-  border-bottom-right-radius: @component-border-radius;
+  border-top-right-radius: @component-border-radius;
+  border-bottom-right-radius: @component-border-radius;
 }
 
 .sb-table.linter {
-  border: 0;
-  thead, tbody, tr, td, th {
-    border: 0;
-  }
-  tbody {
-    background: @base-background-color;
-  }
-}
-
-#linter-tooltip linter-message:last-child::before {
-    border: 8px solid;
-    z-index: -1;
+  border: 0;
+  thead, tbody, tr, td, th {
+    border: 0;
+  }
+  tbody {
+    background: @base-background-color;
+  }
 }
 
 #linter-tooltip {
   linter-message,
-  linter-message.info,
-  linter-message.warning,
-  linter-message.error {
+  linter-message.info,
+  linter-message.warning,
+  linter-message.error {
     font-family: @font-family;
-    color: @base-background-color;
+    color: @base-background-color;
 
     a {
       color: @base-background-color;
@@ -233,16 +228,16 @@
       color: @text-color-highlight;
       background-color: rgba(0, 0, 0, 0.4);
     }
-  }
+  }
 }
 
 linter-message:first-child {
-  border-top-left-radius: @component-border-radius;
-  border-top-right-radius: @component-border-radius;
+  border-top-left-radius: @component-border-radius;
+  border-top-right-radius: @component-border-radius;
 }
 linter-message:last-child {
-  border-bottom-left-radius: @component-border-radius;
-  border-bottom-right-radius: @component-border-radius;
+  border-bottom-left-radius: @component-border-radius;
+  border-bottom-right-radius: @component-border-radius;
 }
 
 

@@ -12,8 +12,8 @@
   color: @text-color-highlight;
 }
 .text(selected) {
-  font-weight: normal;
-  .text(highlight)
+  font-weight: bold;
+  color: @text-color-selected;
 }
 
 .text(info) {
@@ -32,6 +32,11 @@
 .text(heading) {
   font-weight: 300;
   font-size: @font-size * 1.5;
+}
+
+.text(uppercase) {
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
 }
 
 .text(light) {

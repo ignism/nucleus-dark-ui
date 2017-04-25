@@ -52,6 +52,10 @@ atom-panel.modal {
     li.selected {
       .text(selected);
       background: @background-color-selected;
+
+      .character-match {
+        .text(selected);
+      }
     }
 
     li:not(.selected) {
@@ -64,8 +68,12 @@ atom-panel.modal {
       }
 
       &:hover {
-        color: @text-color-highlight;
+        .text(highlight);
         background: transparent;
+
+        .character-match {
+          .text(highlight);
+        }
       }
     }
   }

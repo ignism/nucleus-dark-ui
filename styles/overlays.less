@@ -1,11 +1,42 @@
 atom-overlay,
 atom-panel.modal {
-  .shadow();
+  // .shadow();
+  z-index: 9999;
   border-radius: @component-border-radius;
 }
 
+atom-panel.modal {
+  &:after {
+    // content: "";
+    // position: fixed;
+    // top: 0;
+    // left: 0;
+    // right: 0;
+    // bottom: 0;
+    // z-index: -1;
+    // background: @app-background-color;
+    // opacity: 0.8;
+    // backface-visibility: hidden;
+  }
+
+  &:before {
+    .shadow();
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    background-color: @overlay-background-color;
+    border-radius: @component-border-radius;
+  }
+}
+
+
 .overlay,
 atom-panel.modal {
+  background-color: @overlay-background-color;
   border-radius: @component-border-radius;
   border: 0;
   padding: @component-padding 0;
@@ -26,8 +57,6 @@ atom-panel.modal {
     & > * {
       padding: 0;
     }
-
-    & te
   }
 
   & > * > *:not(.list-group) {

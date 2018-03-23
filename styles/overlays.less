@@ -27,7 +27,7 @@ atom-panel.modal {
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 0;
+    z-index: -1; // Makes sure this doesn't cover anything inside the modal
     background-color: @overlay-background-color;
     border-radius: @component-border-radius;
   }

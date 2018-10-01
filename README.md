@@ -1,11 +1,11 @@
+#### Not under development
+I made the switch to VSCode, this theme is no longer under development. I'll leave this up for anyone to fork.
+
 # Nucleus Dark UI
 
 Nucleus is an adaptable UI theme for Atom with your favorite syntax coloring at its core! This gives the UI a coherent feel, with whatever syntax theme you like to use. I used [Behave](https://atom.io/themes/behave-theme) in the screenshot below.
 
 ![Screenshot](http://i.imgur.com/j7Vrom5.png)
-
-#### Support
-[Buy me a coffee to keep me going](https://www.paypal.me/ignism)
 
 #### Installation
 Inside atom go to settings, select Install and search for Nucleus.
